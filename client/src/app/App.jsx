@@ -8,6 +8,7 @@ import { Home } from '../pages/Home.jsx'
 import { Shop } from '../pages/Shop.jsx'
 import { Skincare } from '../pages/Skincare.jsx'
 import { Parfum } from '../pages/Parfum.jsx'
+import { Koleksi } from '../pages/Koleksi.jsx'
 import { About } from '../pages/About.jsx'
 import { QnA } from '../pages/QnA.jsx'
 import { Team } from '../pages/Team.jsx'
@@ -46,6 +47,7 @@ export default function App() {
       <Routes>
         <Route element={<StoreLayout />}>
           <Route index element={<Home />} />
+          <Route path="koleksi" element={<Koleksi />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop/skincare" element={<Skincare />} />
           <Route path="shop/parfum" element={<Parfum />} />

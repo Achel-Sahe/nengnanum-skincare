@@ -9,10 +9,10 @@ const aboutLinks = [
   { label: 'QnA', to: '/qna' },
 ]
 
-const shopLinks = [
+const koleksiLinks = [
   {
     label: 'Semua koleksi',
-    to: '/shop',
+    to: '/koleksi',
     image: '/images/heritage-hero.jpg',
     description: 'Lihat semua produk',
   },
@@ -33,7 +33,8 @@ const shopLinks = [
 const links = [
   { label: 'Beranda', to: '/' },
   { label: 'Tentang', children: aboutLinks },
-  { label: 'Shop', children: shopLinks },
+  { label: 'Koleksi', children: koleksiLinks },
+  { label: 'Shop', to: '/shop' },
   { label: 'Tim', to: '/team' },
   { label: 'Jurnal', to: '/blog' },
   { label: 'Kontak', to: '/contact' },
@@ -61,7 +62,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openMenu, setOpenMenu] = useState(null)
   const [mobileOpenMenu, setMobileOpenMenu] = useState(null)
-  const [hoveredShopItem, setHoveredShopItem] = useState(shopLinks[0])
+  const [hoveredShopItem, setHoveredShopItem] = useState(koleksiLinks[0])
   const { pathname } = useLocation()
   const cartCount = useCartStore((state) =>
     state.items.reduce((total, item) => total + item.quantity, 0),
@@ -106,7 +107,7 @@ export function SiteHeader() {
                       : 'invisible -translate-y-1 opacity-0'
                   }`}
                   onMouseLeave={() => {
-                    if (label === 'Shop') setHoveredShopItem(shopLinks[0])
+                    if (label === 'Koleksi') setHoveredShopItem(koleksiLinks[0])
                   }}
                 >
                   <div className="flex">
@@ -115,10 +116,10 @@ export function SiteHeader() {
                         <NavLink
                           key={child.to}
                           to={child.to}
-                          end={child.to === '/shop'}
+                          end={child.to === '/koleksi'}
                           onClick={() => setOpenMenu(null)}
                           onMouseEnter={() => {
-                            if (label === 'Shop' && child.image) setHoveredShopItem(child)
+                            if (label === 'Koleksi' && child.image) setHoveredShopItem(child)
                           }}
                           className={({ isActive }) =>
                             `border-b border-white/10 px-7 py-4 last:border-b-0 ${
@@ -139,8 +140,8 @@ export function SiteHeader() {
                     </div>
                     <div className="relative hidden w-[320px] overflow-hidden border-l border-white/10 lg:block">
                       <img
-                        src={label === 'Shop' ? hoveredShopItem?.image : '/images/heritage-hero.jpg'}
-                        alt={label === 'Shop' ? hoveredShopItem?.label : 'Rangkaian Nengnanum Beauty'}
+                        src={label === 'Koleksi' ? hoveredShopItem?.image : '/images/heritage-hero.jpg'}
+                        alt={label === 'Koleksi' ? hoveredShopItem?.label : 'Rangkaian Nengnanum Beauty'}
                         loading="lazy"
                         className="h-full w-full object-cover transition-opacity duration-300"
                       />
@@ -148,7 +149,7 @@ export function SiteHeader() {
                       <div className="absolute bottom-6 left-6 right-6">
                         <p className="eyebrow text-champagne">Nengnanum Beauty</p>
                         <p className="mt-2 font-display text-xl text-ivory">
-                          {label === 'Shop' ? hoveredShopItem?.label || 'Shop' : 'Skincare & parfum'}
+                          {label === 'Koleksi' ? hoveredShopItem?.label || 'Koleksi' : 'Skincare & parfum'}
                         </p>
                       </div>
                     </div>
@@ -223,7 +224,7 @@ export function SiteHeader() {
                       <NavLink
                         key={child.to}
                         to={child.to}
-                        end={child.to === '/shop' && label !== 'Shop'}
+                        end={child.to === '/koleksi'}
                         onClick={() => {
                           setMenuOpen(false)
                           setMobileOpenMenu(null)

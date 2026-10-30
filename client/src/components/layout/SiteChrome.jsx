@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { ArrowRight, ChevronDown, Menu, Search, ShoppingBag, X } from 'lucide-react'
+import { ArrowRight, ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
 
 import { useCartStore } from '../../features/cart/store.js'
 
@@ -177,7 +177,7 @@ export function SiteHeader() {
             <Search size={17} strokeWidth={1.5} />
           </Link>
           <Link to="/cart" aria-label={`Tas belanja, ${cartCount} item`} className="header-icon relative">
-            <ShoppingBag size={17} strokeWidth={1.5} />
+            <ShoppingCart size={17} strokeWidth={1.5} />
             {cartCount > 0 && (
               <span className="absolute -right-0.5 -top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-champagne px-1 text-[9px] font-semibold text-ink">
                 {cartCount}

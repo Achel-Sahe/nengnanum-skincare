@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2940" viewBox="0 0 1440 2940">
+<title>Nengnanum Beauty — inquiries and revelations redesign</title>
+<desc>Editable luxury FAQ page SVG with a restrained navy hero, warm ivory inquiry section, editorial serif typography, and selective champagne-gold accents.</desc>
+<rect width="1440" height="2940" fill="#f7f5f0"/>
+<!-- Shared editorial header -->
+<rect width="1440" height="78" fill="#080d2b"/>
+<line x1="0" y1="77" x2="1440" y2="77" stroke="#ffffff" opacity=".13"/>
+<text x="88" y="49" fill="#c9a65b" font-family="Georgia,serif" font-size="20" letter-spacing="2">NENGNANUM BEAUTY</text>
+<g fill="#f8f6f2" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">
+<text x="510" y="48">HOME</text><text x="604" y="48" fill="#c9a65b">ABOUT</text><text x="708" y="48">SHOP</text><text x="796" y="48">TEAM</text><text x="882" y="48">GAZETTE</text><text x="1000" y="48">CONTACT</text></g>
+<g fill="#f8f6f2" font-family="Georgia,serif" font-size="20"><text x="1280" y="51">⌕</text><text x="1322" y="50">♡</text><text x="1366" y="50">♧</text></g>
+<!-- Hero -->
+<rect y="78" width="1440" height="650" fill="#080d2b"/>
+<rect x="0" y="78" width="1440" height="650" fill="url(#hero)"/>
+<defs><linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#080d2b"/><stop offset=".62" stop-color="#10163f"/><stop offset="1" stop-color="#171b50"/></linearGradient></defs>
+<text x="720" y="174" text-anchor="middle" fill="#c9a65b" font-family="Arial,sans-serif" font-size="11" letter-spacing="3">ATELIER ARCHIVE  ·  CLIENT CARE</text>
+<text x="720" y="246" text-anchor="middle" fill="#f8f6f2" font-family="Georgia,serif" font-size="52">Inquiries &amp;</text>
+<text x="720" y="306" text-anchor="middle" fill="#c9a65b" font-family="Georgia,serif" font-size="52" font-style="italic">Revelations</text>
+<text x="720" y="361" text-anchor="middle" fill="#bfc1cf" font-family="Arial,sans-serif" font-size="16">A considered guide to our botanical formulations, rare fragrances, and atelier services.</text>
+<!-- Search input -->
+<rect x="350" y="408" width="740" height="58" fill="#0e1331" stroke="#c9a65b" stroke-opacity=".48"/>
+<text x="380" y="444" fill="#c9a65b" font-family="Georgia,serif" font-size="23">⌕</text>
+<text x="418" y="444" fill="#8f92a3" font-family="Arial,sans-serif" font-size="14">Search the atelier archive</text>
+<line x1="1020" y1="422" x2="1020" y2="452" stroke="#ffffff" opacity=".15"/>
+<text x="1052" y="444" fill="#e7d5ac" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5">SEARCH</text>
+<text x="720" y="520" text-anchor="middle" fill="#e7e2d9" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.8">A LITTLE GUIDANCE, WITH THE CARE OF THE ATELIER</text>
+<!-- Simple category navigation -->
+<line x1="260" y1="570" x2="1180" y2="570" stroke="#ffffff" opacity=".16"/>
+<g font-family="Arial,sans-serif" font-size="10" letter-spacing="1.2" text-anchor="middle">
+<text x="355" y="604" fill="#c9a65b">ALL INQUIRIES</text><text x="535" y="604" fill="#bfc1cf">FORMULATIONS</text><text x="704" y="604" fill="#bfc1cf">FRAGRANCE</text><text x="876" y="604" fill="#bfc1cf">ORDERS &amp; GIFTS</text><text x="1060" y="604" fill="#bfc1cf">CONSULTATIONS</text></g>
+<line x1="300" y1="622" x2="410" y2="622" stroke="#c9a65b" stroke-width="2"/>
+<!-- Q&A intro -->
+<text x="120" y="804" fill="#c9a65b" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.8">CURATED INQUIRIES</text>
+<text x="120" y="860" fill="#171826" font-family="Georgia,serif" font-size="38">A few things worth knowing.</text>
+<text x="120" y="895" fill="#85879a" font-family="Arial,sans-serif" font-size="14">Explore our most requested notes on ingredients, sourcing, private services, and delivery.</text>
+<!-- left editorial note -->
+<rect x="120" y="950" width="300" height="410" fill="#080d2b"/>
+<text x="154" y="1002" fill="#c9a65b" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">FROM THE APOTHECARY</text>
+<text x="154" y="1055" fill="#f8f6f2" font-family="Georgia,serif" font-size="25">The Alchemy</text>
+<text x="154" y="1087" fill="#f8f6f2" font-family="Georgia,serif" font-size="25">of Purity</text>
+<line x1="154" y1="1118" x2="206" y2="1118" stroke="#c9a65b"/>
+<text x="154" y="1155" fill="#bec0cc" font-family="Arial,sans-serif" font-size="13">Every creation is shaped by</text>
+<text x="154" y="1178" fill="#bec0cc" font-family="Arial,sans-serif" font-size="13">careful sourcing, considered</text>
+<text x="154" y="1201" fill="#bec0cc" font-family="Arial,sans-serif" font-size="13">formulation, and a patient</text>
+<text x="154" y="1224" fill="#bec0cc" font-family="Arial,sans-serif" font-size="13">approach to craft.</text>
+<line x1="154" y1="1260" x2="386" y2="1260" stroke="#ffffff" opacity=".16"/>
+<text x="154" y="1300" fill="#e7d5ac" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.3">OUD  ·  ROSE  ·  MYRRH</text>
+<!-- FAQ list: open editorial rows, not boxed cards -->
+<g font-family="Arial,sans-serif">
+<text x="472" y="986" fill="#c9a65b" font-size="10" letter-spacing="1.6">FORMULATIONS &amp; ALCHEMY</text>
+<text x="472" y="1024" fill="#171826" font-family="Georgia,serif" font-size="21">What is distinctive about the 24K gold infusion?</text>
+<text x="472" y="1060" fill="#777987" font-size="13">Select formulas feature a carefully suspended gold infusion alongside botanical</text><text x="472" y="1081" fill="#777987" font-size="13">and peptide ingredients. Please consult each product label for its full details.</text>
+<line x1="472" y1="1110" x2="1320" y2="1110" stroke="#dedbd3"/>
+<text x="472" y="1150" fill="#c9a65b" font-size="10" letter-spacing="1.6">HARVEST &amp; ORIGIN</text>
+<text x="472" y="1188" fill="#171826" font-family="Georgia,serif" font-size="21">Where are the Damascene roses harvested?</text>
+<text x="472" y="1224" fill="#777987" font-size="13">Our rose materials are sourced from high-altitude growing regions and gathered</text><text x="472" y="1245" fill="#777987" font-size="13">with care during the cool early hours to preserve their delicate aromatic profile.</text>
+<line x1="472" y1="1274" x2="1320" y2="1274" stroke="#dedbd3"/>
+<text x="472" y="1314" fill="#c9a65b" font-size="10" letter-spacing="1.6">BESPOKE CONSULTATIONS</text>
+<text x="472" y="1352" fill="#171826" font-family="Georgia,serif" font-size="21">How does a private fragrance consultation work?</text>
+<text x="472" y="1388" fill="#777987" font-size="13">A personal session with an atelier specialist helps refine your preferences and</text><text x="472" y="1409" fill="#777987" font-size="13">guide a tailored fragrance direction, with follow-up details shared privately.</text>
+<line x1="472" y1="1438" x2="1320" y2="1438" stroke="#dedbd3"/>
+<text x="472" y="1478" fill="#c9a65b" font-size="10" letter-spacing="1.6">ETHICS &amp; FORMULATION</text>
+<text x="472" y="1516" fill="#171826" font-family="Georgia,serif" font-size="21">Where can I find testing and ingredient information?</text>
+<text x="472" y="1552" fill="#777987" font-size="13">Product-specific ingredients and testing details are available through the product</text><text x="472" y="1573" fill="#777987" font-size="13">information and can be confirmed with our client care team before purchase.</text>
+<line x1="472" y1="1602" x2="1320" y2="1602" stroke="#dedbd3"/>
+<text x="472" y="1642" fill="#c9a65b" font-size="10" letter-spacing="1.6">CLIENT CARE &amp; DELIVERY</text>
+<text x="472" y="1680" fill="#171826" font-family="Georgia,serif" font-size="21">What should I know about international delivery?</text>
+<text x="472" y="1716" fill="#777987" font-size="13">Delivery options, timing, and any applicable charges are confirmed at checkout.</text><text x="472" y="1737" fill="#777987" font-size="13">For a particular destination, our concierge can help clarify the available service.</text>
+<line x1="472" y1="1766" x2="1320" y2="1766" stroke="#dedbd3"/>
+<text x="472" y="1806" fill="#c9a65b" font-size="10" letter-spacing="1.6">GIFTING &amp; PERSONALIZATION</text>
+<text x="472" y="1844" fill="#171826" font-family="Georgia,serif" font-size="21">Can a fragrance be personalized as a gift?</text>
+<text x="472" y="1880" fill="#777987" font-size="13">Selected pieces can be prepared with a considered presentation. Contact the</text><text x="472" y="1901" fill="#777987" font-size="13">atelier to discuss availability, personalization, and gift packaging.</text>
+</g>
+<text x="472" y="1972" fill="#171826" font-family="Georgia,serif" font-size="15">Still have a question?</text><text x="625" y="1972" fill="#8a7042" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.3">WRITE TO THE CONCIERGE  →</text>
+<!-- Consultation panel -->
+<rect x="0" y="2070" width="1440" height="470" fill="#080d2b"/>
+<text x="720" y="2160" text-anchor="middle" fill="#c9a65b" font-family="Arial,sans-serif" font-size="10" letter-spacing="2.8">PRIVATE CLIENT SERVICES</text>
+<text x="720" y="2220" text-anchor="middle" fill="#f8f6f2" font-family="Georgia,serif" font-size="38">Seeking a more personal note?</text>
+<text x="720" y="2260" text-anchor="middle" fill="#bfc1cf" font-family="Arial,sans-serif" font-size="15">Our fragrance specialists and skincare formulators are available for considered, private guidance.</text>
+<rect x="484" y="2310" width="254" height="52" fill="#c9a65b"/>
+<text x="611" y="2342" text-anchor="middle" fill="#080d2b" font-family="Arial,sans-serif" font-size="10" font-weight="600" letter-spacing="1.2">SPEAK WITH AN ATELIER SPECIALIST</text>
+<text x="792" y="2342" fill="#e7d5ac" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.5">SEND A PRIVATE DISPATCH  →</text>
+<!-- Footer -->
+<rect x="0" y="2540" width="1440" height="400" fill="#05091e"/>
+<text x="96" y="2620" fill="#c9a65b" font-family="Georgia,serif" font-size="22" letter-spacing="1.5">NENGNANUM BEAUTY</text>
+<text x="96" y="2660" fill="#aeb0bd" font-family="Arial,sans-serif" font-size="13">Haute parfumerie &amp; botanical skincare,</text><text x="96" y="2684" fill="#aeb0bd" font-family="Arial,sans-serif" font-size="13">crafted with Damascene heritage.</text>
+<text x="610" y="2620" fill="#c9a65b" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.8">THE ATELIER</text><text x="610" y="2660" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Our story</text><text x="610" y="2688" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Botanical harvests</text><text x="610" y="2716" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Private commissions</text>
+<text x="850" y="2620" fill="#c9a65b" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.8">CONCIERGE</text><text x="850" y="2660" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Client care</text><text x="850" y="2688" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Shipping &amp; returns</text><text x="850" y="2716" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="13">Contact</text>
+<text x="1100" y="2620" fill="#c9a65b" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.8">THE GAZETTE</text><text x="1100" y="2655" fill="#b7b9c6" font-family="Arial,sans-serif" font-size="12">Private notes from the atelier.</text>
+<rect x="1100" y="2680" width="210" height="38" fill="#11162d" stroke="#777987" stroke-opacity=".5"/><text x="1114" y="2704" fill="#85879a" font-family="Arial,sans-serif" font-size="11">Your email address</text><rect x="1318" y="2680" width="58" height="38" fill="#c9a65b"/><text x="1347" y="2704" text-anchor="middle" fill="#080d2b" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">JOIN</text>
+<line x1="96" y1="2790" x2="1344" y2="2790" stroke="#ffffff" opacity=".13"/>
+<text x="96" y="2830" fill="#777b8c" font-family="Arial,sans-serif" font-size="10">© 2026 Nengnanum Beauty Atelier</text>
+<text x="1344" y="2830" text-anchor="end" fill="#777b8c" font-family="Arial,sans-serif" font-size="10" letter-spacing="1">PRIVACY  ·  TERMS  ·  SHIPPING  ·  CONTACT</text>
+</svg>

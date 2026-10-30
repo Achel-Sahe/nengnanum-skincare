@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #080d2b;
+  --color-midnight: #05091e;
+  --color-indigo: #171b50;
+  --color-ivory: #f7f5f0;
+  --color-paper: #f0eee8;
+  --color-champagne: #c9a65b;
+  --color-goldlight: #e7d5ac;
+  --color-slate: #85879a;
+  --color-muted: #bfc1cf;
+  --color-hairline: #dedbd3;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", Arial, sans-serif;
+
+  --tracking-atelier: 0.2em;
+  --shadow-gold: 0 18px 55px rgba(5, 9, 30, 0.16);
+  --container-atelier: 80%;
+}
+
+/*
+ * Desktop (xl and up) uses 80% of the viewport for the atelier container.
+ * Below xl the token falls back to 1320px so mobile/tablet layouts are unchanged.
+ */
+@media (max-width: 1279px) {
+  :root {
+    --container-atelier: 1320px;
+  }
+}
+
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    background: #f7f5f0;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #f7f5f0;
+    color: #080d2b;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #c9a65b;
+    color: #080d2b;
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #c9a65b;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[9px] font-medium uppercase tracking-[0.25em];
+  }
+
+  .nav-link {
+    @apply relative py-2 font-sans text-[10px] uppercase tracking-[0.18em] text-ivory/65 transition-colors hover:text-ivory;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-[1px] left-0 h-px w-0 bg-champagne transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  .nav-link-active {
+    @apply text-champagne;
+  }
+
+  .header-icon {
+    @apply grid h-10 w-10 place-items-center text-ivory/75 transition-colors hover:text-champagne;
+  }
+
+  .footer-link {
+    @apply block transition-colors hover:text-champagne;
+  }
+
+  .contact-field {
+    @apply w-full border border-hairline bg-ivory px-4 py-3 font-sans text-sm text-ink transition-colors placeholder:text-slate/50 focus:border-champagne focus:outline-none;
+  }
+
+  .contact-field[aria-invalid='true'] {
+    @apply border-[#9b3d2e];
+  }
+
+  .hairline {
+    @apply border-t border-hairline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

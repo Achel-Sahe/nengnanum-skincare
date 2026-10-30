@@ -10,9 +10,24 @@ const aboutLinks = [
 ]
 
 const shopLinks = [
-  { label: 'Semua', to: '/shop' },
-  { label: 'Skincare', to: '/shop/skincare' },
-  { label: 'Parfum', to: '/shop/parfum' },
+  {
+    label: 'Semua koleksi',
+    to: '/shop',
+    image: '/images/heritage-hero.jpg',
+    description: 'Lihat semua produk',
+  },
+  {
+    label: 'Skincare',
+    to: '/shop/skincare',
+    image: '/images/night-serum.jpg',
+    description: 'Rawat & jaga kulit',
+  },
+  {
+    label: 'Parfum',
+    to: '/shop/parfum',
+    image: '/images/hero-fragrance.jpg',
+    description: 'Wangi jadi ciri khas',
+  },
 ]
 
 const links = [
@@ -46,6 +61,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openMenu, setOpenMenu] = useState(null)
   const [mobileOpenMenu, setMobileOpenMenu] = useState(null)
+  const [hoveredShopItem, setHoveredShopItem] = useState(shopLinks[0])
   const { pathname } = useLocation()
   const cartCount = useCartStore((state) =>
     state.items.reduce((total, item) => total + item.quantity, 0),
@@ -84,27 +100,59 @@ export function SiteHeader() {
                 </button>
                 <div
                   id={`desktop-menu-${label}`}
-                  className={`absolute left-1/2 top-full w-48 -translate-x-1/2 border border-champagne/25 bg-midnight shadow-gold transition-all duration-200 ${
+                  className={`absolute left-1/2 top-full -translate-x-1/2 border border-champagne/25 bg-midnight shadow-gold transition-all duration-200 ${
                     openMenu === label
                       ? 'visible translate-y-0 opacity-100'
                       : 'invisible -translate-y-1 opacity-0'
                   }`}
+                  onMouseLeave={() => {
+                    if (label === 'Shop') setHoveredShopItem(shopLinks[0])
+                  }}
                 >
-                  {children.map((child) => (
-                    <NavLink
-                      key={child.to}
-                      to={child.to}
-                      end={child.to === '/shop'}
-                      onClick={() => setOpenMenu(null)}
-                      className={({ isActive }) =>
-                        `block border-b border-white/10 px-5 py-3.5 font-sans text-[10px] uppercase tracking-[0.18em] transition-colors last:border-b-0 ${
-                          isActive ? 'text-champagne' : 'text-ivory/70 hover:text-champagne'
-                        }`
-                      }
-                    >
-                      {child.label}
-                    </NavLink>
-                  ))}
+                  <div className="flex">
+                    <div className="flex w-[280px] flex-col">
+                      {children.map((child) => (
+                        <NavLink
+                          key={child.to}
+                          to={child.to}
+                          end={child.to === '/shop'}
+                          onClick={() => setOpenMenu(null)}
+                          onMouseEnter={() => {
+                            if (label === 'Shop' && child.image) setHoveredShopItem(child)
+                          }}
+                          className={({ isActive }) =>
+                            `border-b border-white/10 px-7 py-4 last:border-b-0 ${
+                              isActive ? 'bg-white/5' : 'hover:bg-white/5'
+                            }`
+                          }
+                        >
+                          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-ivory">
+                            {child.label}
+                          </p>
+                          {child.description && (
+                            <p className="mt-1 font-sans text-xs text-ivory/55">
+                              {child.description}
+                            </p>
+                          )}
+                        </NavLink>
+                      ))}
+                    </div>
+                    <div className="relative hidden w-[320px] overflow-hidden border-l border-white/10 lg:block">
+                      <img
+                        src={label === 'Shop' ? hoveredShopItem?.image : '/images/heritage-hero.jpg'}
+                        alt={label === 'Shop' ? hoveredShopItem?.label : 'Rangkaian Nengnanum Beauty'}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-opacity duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 to-transparent" />
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <p className="eyebrow text-champagne">Nengnanum Beauty</p>
+                        <p className="mt-2 font-display text-xl text-ivory">
+                          {label === 'Shop' ? hoveredShopItem?.label || 'Shop' : 'Skincare & parfum'}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -170,21 +218,42 @@ export function SiteHeader() {
                   />
                 </button>
                 {mobileOpenMenu === label && (
-                  <div id={`mobile-menu-${label}`} className="pb-2 pl-4">
+                  <div id={`mobile-menu-${label}`} className="pb-2">
                     {children.map((child) => (
                       <NavLink
                         key={child.to}
                         to={child.to}
-                        end={child.to === '/shop'}
+                        end={child.to === '/shop' && label !== 'Shop'}
                         onClick={() => {
                           setMenuOpen(false)
                           setMobileOpenMenu(null)
                         }}
                         className={({ isActive }) =>
-                          `block border-l border-white/10 py-3 pl-4 font-sans text-[11px] uppercase tracking-[0.16em] ${isActive ? 'text-champagne' : 'text-ivory/60'}`
+                          `flex items-center gap-3 px-1 py-3 ${
+                            isActive ? 'text-champagne' : 'text-ivory/70'
+                          }`
                         }
                       >
-                        {child.label}
+                        {child.image && (
+                          <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                            <img
+                              src={child.image}
+                              alt=""
+                              loading="lazy"
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        )}
+                        <div className="min-w-0">
+                          <p className="font-sans text-[11px] uppercase tracking-[0.16em]">
+                            {child.label}
+                          </p>
+                          {child.description && (
+                            <p className="mt-0.5 font-sans text-xs text-ivory/55">
+                              {child.description}
+                            </p>
+                          )}
+                        </div>
                       </NavLink>
                     ))}
                   </div>

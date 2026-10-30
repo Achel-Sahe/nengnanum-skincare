@@ -128,7 +128,7 @@ export function Blog() {
               falloff={0.16}
               blur={4}
               autoplay
-              autoplayDelay={3500}
+              autoplayDelay={2500}
               showControls
               showIndicators
             />

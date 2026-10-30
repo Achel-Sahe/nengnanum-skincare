@@ -102,7 +102,7 @@ export function Blog() {
 
       <section className="relative overflow-hidden bg-ink py-16 text-ivory sm:py-20 lg:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(35,42,112,.55),transparent_60%)]" />
-        <div className="relative mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
+        <div className="relative mx-auto max-w-atelier px-6 sm:px-8 lg:px-12 mb-30">
           <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:mb-12">
             <SectionHeading
               eyebrow="Testimoni"
@@ -114,7 +114,7 @@ export function Blog() {
               Geser atau klik untuk melihat
             </p>
           </div>
-          <div className="relative h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] xl:h-[480px] mt-10">
+          <div className="relative h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] xl:h-[480px] xl:pt-30">
             <DepthCarousel
               items={testimonialImages}
               cardWidth={850}

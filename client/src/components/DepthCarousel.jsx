@@ -193,9 +193,11 @@ const DepthCarousel = ({
     const onWheel = (e) => {
       const cfg = cfgRef.current
       if (cfg.count < 2) return
+      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY)
+      if (!isHorizontal) return
       e.preventDefault()
       tweenRef.current?.kill()
-      const raw = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY
+      const raw = e.deltaX
       const delta = e.deltaMode === 1 ? raw * 24 : raw
       const step = clamp(delta / (cfg.cardWidth * 0.9), -0.6, 0.6)
       posRef.current += step

@@ -7,7 +7,7 @@ const links = [
   { to: '/account/addresses', label: 'Saved addresses' },
 ]
 
-export function AccountPage() {
+export function Account() {
   return (
     <PageShell
       title="My account"

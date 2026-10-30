@@ -107,6 +107,11 @@
     @apply w-full border border-hairline bg-ivory px-4 py-3 font-sans text-sm text-ink transition-colors placeholder:text-slate/50 focus:border-champagne focus:outline-none;
   }
 
+  /* Shared height for every hero except the full-screen Home hero. */
+  .subpage-hero {
+    @apply min-h-[65svh];
+  }
+
   .contact-field[aria-invalid='true'] {
     @apply border-[#9b3d2e];
   }

@@ -1,5 +1,5 @@
 // Single source of truth for the Nengnanum Beauty journal.
-// Update this file to add or edit blog entries; BlogPage renders it directly.
+// Update this file to add or edit blog entries; the Blog page renders it directly.
 export const blogPosts = [
   {
     title: 'Nengnanum Beauty – Skincare Seribu Manfaat. Halal, BPOM Terdaftar, dan Aman untuk Kulit',

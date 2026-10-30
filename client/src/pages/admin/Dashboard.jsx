@@ -5,7 +5,7 @@ const stats = [
   { label: 'Pending payments', value: '—' },
 ]
 
-export function AdminDashboardPage() {
+export function AdminDashboard() {
   return (
     <div>
       <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>

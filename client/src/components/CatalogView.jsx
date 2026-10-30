@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { ArrowRight, Droplets, Flower2, Gem } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import { ProductCard, PrimaryButton } from '../components/ProductCard.jsx'
-import { Eyebrow, SectionHeading, TextLink } from '../components/layout/SiteChrome.jsx'
+import { ProductCard, PrimaryButton } from './ProductCard.jsx'
+import { Eyebrow, SectionHeading, TextLink } from './layout/SiteChrome.jsx'
 import { products } from '../data/content.js'
 import { useCartStore } from '../features/cart/store.js'
 
@@ -27,7 +27,7 @@ const benefits = [
 
 const productFilters = ['All creations', 'Fragrance', 'Elixirs', 'Care']
 
-export function CatalogPage({ showcase = false }) {
+export function CatalogView({ showcase = false }) {
   const [activeFilter, setActiveFilter] = useState('All creations')
   const addItem = useCartStore((state) => state.addItem)
 
@@ -59,7 +59,7 @@ export function CatalogPage({ showcase = false }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(35,42,112,.7),transparent_55%)]" />
         <div
           className={`relative mx-auto grid ${
-            showcase ? 'min-h-[calc(100svh-74px)]' : 'min-h-[610px]'
+            showcase ? 'min-h-[calc(100svh-74px)]' : 'subpage-hero'
           } max-w-atelier items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12 lg:py-20`}
         >
           <div className="max-w-xl">

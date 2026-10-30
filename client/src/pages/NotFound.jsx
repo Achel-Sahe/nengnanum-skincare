@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { PageShell } from '../components/PageShell.jsx'
 
-export function NotFoundPage() {
+export function NotFound() {
   return (
     <PageShell title="Page not found" description="That page does not exist or has moved.">
       <Link

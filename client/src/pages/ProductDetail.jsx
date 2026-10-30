@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 
 import { PageShell } from '../components/PageShell.jsx'
 
-export function ProductDetailPage() {
+export function ProductDetail() {
   const { slug } = useParams()
 
   return (

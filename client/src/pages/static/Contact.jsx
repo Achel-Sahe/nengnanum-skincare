@@ -47,7 +47,7 @@ function ContactDetail({ icon: Icon, label, children }) {
   )
 }
 
-export function ContactPage() {
+export function Contact() {
   const [formNotice, setFormNotice] = useState('')
   const {
     register,
@@ -80,7 +80,7 @@ export function ContactPage() {
     <>
       <section className="relative overflow-hidden bg-ink text-ivory">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_42%,rgba(35,42,112,.62),transparent_52%)]" />
-        <div className="relative mx-auto grid min-h-[390px] max-w-atelier items-center gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12 lg:py-20">
+        <div className="relative mx-auto grid subpage-hero max-w-atelier items-center gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12 lg:py-20">
           <div className="max-w-2xl">
             <Eyebrow>Contact · Customer care</Eyebrow>
             <h1 className="mt-5 font-display text-5xl leading-[1.02] tracking-[-0.03em] sm:text-7xl">Pesan untuk Kami</h1>

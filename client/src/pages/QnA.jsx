@@ -15,7 +15,7 @@ const categories = [
   'Gifting',
 ]
 
-export function InquiriesPage() {
+export function QnA() {
   const [searchParams] = useSearchParams()
   const requestedCategory = searchParams.get('category')
   const [query, setQuery] = useState('')
@@ -47,7 +47,7 @@ export function InquiriesPage() {
   return (
     <>
       <section className="bg-ink text-ivory">
-        <div className="mx-auto max-w-atelier px-6 pb-14 pt-14 text-center sm:px-8 sm:pb-16 sm:pt-20 lg:px-12">
+        <div className="mx-auto flex subpage-hero max-w-atelier flex-col justify-center px-6 pb-14 pt-14 text-center sm:px-8 sm:pb-16 sm:pt-20 lg:px-12">
           <Eyebrow>Atelier archive · client care</Eyebrow>
           <h1 className="mt-5 font-display text-5xl leading-[.98] tracking-[-0.03em] sm:text-7xl">
             Inquiries &amp;

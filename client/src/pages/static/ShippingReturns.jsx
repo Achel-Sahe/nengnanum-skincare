@@ -1,6 +1,6 @@
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function ShippingReturnsPage() {
+export function ShippingReturns() {
   return (
     <PageShell title="Shipping & returns" description="Policy details for delivery and returns.">
       <div className="max-w-2xl space-y-4 text-sm leading-relaxed text-stone-600">

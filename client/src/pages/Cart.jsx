@@ -5,7 +5,7 @@ import { PageShell } from '../components/PageShell.jsx'
 import { useCartStore } from '../features/cart/store.js'
 import { formatPrice } from '../lib/utils.js'
 
-export function CartPage() {
+export function Cart() {
   const items = useCartStore((state) => state.items)
   const updateQuantity = useCartStore((state) => state.updateQuantity)
   const removeItem = useCartStore((state) => state.removeItem)

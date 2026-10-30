@@ -1,13 +1,13 @@
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function CheckoutSuccessPage() {
+export function Orders() {
   return (
     <PageShell
-      title="Thank you"
-      description="Payment status is confirmed by the payment provider webhook and can be refreshed from GET /orders/:id."
+      title="Orders"
+      description="Order history will load from GET /orders for the signed-in customer."
     >
       <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-sm text-stone-500">
-        Order confirmation placeholder.
+        Order list placeholder.
       </div>
     </PageShell>
   )

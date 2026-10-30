@@ -1,13 +1,13 @@
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function AddressesPage() {
+export function CheckoutSuccess() {
   return (
     <PageShell
-      title="Addresses"
-      description="Address CRUD will use the Address model through the API."
+      title="Thank you"
+      description="Payment status is confirmed by the payment provider webhook and can be refreshed from GET /orders/:id."
     >
       <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-sm text-stone-500">
-        Address list placeholder.
+        Order confirmation placeholder.
       </div>
     </PageShell>
   )

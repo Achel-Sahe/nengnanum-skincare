@@ -123,11 +123,11 @@ function HeritageFAQ() {
   )
 }
 
-export function HeritagePage() {
+export function About() {
   return (
     <>
       <section className="overflow-hidden bg-ink text-ivory">
-        <div className="mx-auto grid min-h-[560px] max-w-atelier items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12 lg:py-20">
+        <div className="mx-auto grid subpage-hero max-w-atelier items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12 lg:py-20">
           <div className="max-w-xl">
             <Eyebrow>The heritage monograph</Eyebrow>
             <h1 className="mt-6 font-display text-6xl leading-[.94] tracking-[-0.04em] sm:text-7xl">

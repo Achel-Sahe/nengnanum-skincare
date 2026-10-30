@@ -29,7 +29,7 @@ const fields = [
   },
 ]
 
-export function RegisterPage() {
+export function Register() {
   const {
     register,
     handleSubmit,

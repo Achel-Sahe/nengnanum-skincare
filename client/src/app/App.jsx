@@ -4,30 +4,31 @@ import { ScrollToTop } from './ScrollToTop.jsx'
 import { AdminLayout } from '../components/layout/AdminLayout.jsx'
 import { StoreLayout } from '../components/layout/StoreLayout.jsx'
 
-import { CatalogPage } from '../pages/CatalogPage.jsx'
-import { HeritagePage } from '../pages/HeritagePage.jsx'
-import { InquiriesPage } from '../pages/InquiriesPage.jsx'
-import { TeamPage } from '../pages/TeamPage.jsx'
-import { BlogPage } from '../pages/BlogPage.jsx'
-import { ProductDetailPage } from '../pages/ProductDetailPage.jsx'
-import { CartPage } from '../pages/CartPage.jsx'
-import { CheckoutPage } from '../pages/checkout/CheckoutPage.jsx'
-import { CheckoutSuccessPage } from '../pages/checkout/CheckoutSuccessPage.jsx'
-import { LoginPage } from '../pages/auth/LoginPage.jsx'
-import { RegisterPage } from '../pages/auth/RegisterPage.jsx'
-import { AccountPage } from '../pages/account/AccountPage.jsx'
-import { AddressesPage } from '../pages/account/AddressesPage.jsx'
-import { OrdersPage } from '../pages/account/OrdersPage.jsx'
-import { OrderDetailPage } from '../pages/account/OrderDetailPage.jsx'
-import { AdminDashboardPage } from '../pages/admin/AdminDashboardPage.jsx'
-import { AdminProductsPage } from '../pages/admin/AdminProductsPage.jsx'
-import { AdminCategoriesPage } from '../pages/admin/AdminCategoriesPage.jsx'
-import { AdminOrdersPage } from '../pages/admin/AdminOrdersPage.jsx'
-import { ContactPage } from '../pages/static/ContactPage.jsx'
-import { ShippingReturnsPage } from '../pages/static/ShippingReturnsPage.jsx'
-import { PrivacyPage } from '../pages/static/PrivacyPage.jsx'
-import { TermsPage } from '../pages/static/TermsPage.jsx'
-import { NotFoundPage } from '../pages/NotFoundPage.jsx'
+import { Home } from '../pages/Home.jsx'
+import { Shop } from '../pages/Shop.jsx'
+import { About } from '../pages/About.jsx'
+import { QnA } from '../pages/QnA.jsx'
+import { Team } from '../pages/Team.jsx'
+import { Blog } from '../pages/Blog.jsx'
+import { ProductDetail } from '../pages/ProductDetail.jsx'
+import { Cart } from '../pages/Cart.jsx'
+import { Checkout } from '../pages/checkout/Checkout.jsx'
+import { CheckoutSuccess } from '../pages/checkout/CheckoutSuccess.jsx'
+import { Login } from '../pages/auth/Login.jsx'
+import { Register } from '../pages/auth/Register.jsx'
+import { Account } from '../pages/account/Account.jsx'
+import { Addresses } from '../pages/account/Addresses.jsx'
+import { Orders } from '../pages/account/Orders.jsx'
+import { OrderDetail } from '../pages/account/OrderDetail.jsx'
+import { AdminDashboard } from '../pages/admin/Dashboard.jsx'
+import { AdminProducts } from '../pages/admin/Products.jsx'
+import { AdminCategories } from '../pages/admin/Categories.jsx'
+import { AdminOrders } from '../pages/admin/Orders.jsx'
+import { Contact } from '../pages/static/Contact.jsx'
+import { ShippingReturns } from '../pages/static/ShippingReturns.jsx'
+import { Privacy } from '../pages/static/Privacy.jsx'
+import { Terms } from '../pages/static/Terms.jsx'
+import { NotFound } from '../pages/NotFound.jsx'
 
 /**
  * Route table. Keep in sync with the route list in
@@ -42,29 +43,29 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route element={<StoreLayout />}>
-          <Route index element={<CatalogPage showcase />} />
-          <Route path="shop" element={<CatalogPage />} />
-          <Route path="products/:slug" element={<ProductDetailPage />} />
-          <Route path="cart" element={<CartPage />} />
-          <Route path="checkout" element={<CheckoutPage />} />
-          <Route path="checkout/success" element={<CheckoutSuccessPage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="register" element={<RegisterPage />} />
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="products/:slug" element={<ProductDetail />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout/success" element={<CheckoutSuccess />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
 
           {/* TODO: protect account routes once auth is wired up. */}
-          <Route path="account" element={<AccountPage />} />
-          <Route path="account/addresses" element={<AddressesPage />} />
-          <Route path="account/orders" element={<OrdersPage />} />
-          <Route path="account/orders/:id" element={<OrderDetailPage />} />
+          <Route path="account" element={<Account />} />
+          <Route path="account/addresses" element={<Addresses />} />
+          <Route path="account/orders" element={<Orders />} />
+          <Route path="account/orders/:id" element={<OrderDetail />} />
 
-          <Route path="about-us" element={<HeritagePage />} />
-          <Route path="qna" element={<InquiriesPage />} />
-          <Route path="team" element={<TeamPage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="shipping-returns" element={<ShippingReturnsPage />} />
-          <Route path="privacy" element={<PrivacyPage />} />
-          <Route path="terms" element={<TermsPage />} />
+          <Route path="about-us" element={<About />} />
+          <Route path="qna" element={<QnA />} />
+          <Route path="team" element={<Team />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="shipping-returns" element={<ShippingReturns />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="terms" element={<Terms />} />
 
           {/* Legacy links from the first scaffold. */}
           <Route path="about" element={<Navigate to="/about-us" replace />} />
@@ -73,13 +74,13 @@ export default function App() {
 
         {/* TODO: guard with role="ADMIN" from the backend. */}
         <Route path="admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboardPage />} />
-          <Route path="products" element={<AdminProductsPage />} />
-          <Route path="categories" element={<AdminCategoriesPage />} />
-          <Route path="orders" element={<AdminOrdersPage />} />
+          <Route index element={<AdminDashboard />} />
+          <Route path="products" element={<AdminProducts />} />
+          <Route path="categories" element={<AdminCategories />} />
+          <Route path="orders" element={<AdminOrders />} />
         </Route>
 
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

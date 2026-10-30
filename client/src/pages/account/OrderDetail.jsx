@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function OrderDetailPage() {
+export function OrderDetail() {
   const { id } = useParams()
 
   return (

@@ -1,4 +1,4 @@
-export function AdminOrdersPage() {
+export function AdminOrders() {
   return (
     <div>
       <h1 className="text-2xl font-semibold tracking-tight">Orders</h1>

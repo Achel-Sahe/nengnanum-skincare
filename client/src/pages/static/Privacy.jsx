@@ -1,6 +1,6 @@
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function PrivacyPage() {
+export function Privacy() {
   return (
     <PageShell title="Privacy policy" description="How customer data is collected and used.">
       <div className="max-w-2xl space-y-4 text-sm leading-relaxed text-stone-600">

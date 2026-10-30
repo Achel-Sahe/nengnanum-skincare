@@ -1,6 +1,6 @@
 import { PageShell } from '../../components/PageShell.jsx'
 
-export function CheckoutPage() {
+export function Checkout() {
   return (
     <PageShell
       title="Checkout"

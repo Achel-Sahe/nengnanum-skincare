@@ -65,14 +65,14 @@ function ArticleCard({ post, index }) {
   )
 }
 
-export function BlogPage() {
+export function Blog() {
   const [featured, ...latest] = blogPosts
 
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-ivory">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_76%_46%,rgba(35,42,112,.55),transparent_49%)]" />
-        <div className="relative mx-auto flex min-h-[390px] max-w-atelier flex-col justify-center px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+        <div className="relative mx-auto flex subpage-hero max-w-atelier flex-col justify-center px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
           <Eyebrow>The Beauty Gazette</Eyebrow>
           <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.02] tracking-[-0.035em] sm:text-7xl">Stories on skin, care &amp; beauty</h1>
           <p className="mt-6 max-w-2xl font-sans text-sm leading-6 text-ivory/65 sm:text-base">The latest articles from Nengnanum Beauty.</p>

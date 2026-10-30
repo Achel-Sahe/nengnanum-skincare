@@ -81,12 +81,12 @@ function ResellerCard({ person, index }) {
   )
 }
 
-export function TeamPage() {
+export function Team() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-ivory">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_46%,rgba(35,42,112,.55),transparent_48%)]" />
-        <div className="relative mx-auto grid min-h-[500px] max-w-atelier items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12">
+        <div className="relative mx-auto grid subpage-hero max-w-atelier items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12">
           <div className="max-w-2xl">
             <Eyebrow>The Nengnanum community</Eyebrow>
             <h1 className="mt-6 font-display text-6xl leading-[.96] tracking-[-0.035em] sm:text-7xl">Meet Our Team</h1>

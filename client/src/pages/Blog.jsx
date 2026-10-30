@@ -114,16 +114,16 @@ export function Blog() {
               Geser atau klik untuk melihat
             </p>
           </div>
-          <div className="relative h-[320px] sm:h-[340px] lg:h-[380px]">
+          <div className="relative h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] xl:h-[480px] mt-10">
             <DepthCarousel
               items={testimonialImages}
-              cardWidth={560}
-              cardHeight={340}
-              radius={12}
-              depth={190}
-              spread={110}
+              cardWidth={850}
+              cardHeight={531}
+              radius={14}
+              depth={200}
+              spread={120}
               tilt={14}
-              perspective={1700}
+              perspective={1900}
               visibleCards={4}
               falloff={0.16}
               blur={4}

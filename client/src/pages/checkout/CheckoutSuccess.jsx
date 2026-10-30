@@ -3,11 +3,11 @@ import { PageShell } from '../../components/PageShell.jsx'
 export function CheckoutSuccess() {
   return (
     <PageShell
-      title="Thank you"
-      description="Payment status is confirmed by the payment provider webhook and can be refreshed from GET /orders/:id."
+      title="Terima kasih"
+      description="Status pembayaran akan dikonfirmasi oleh penyedia pembayaran dan dapat diperbarui dari sistem pesanan."
     >
-      <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-sm text-stone-500">
-        Order confirmation placeholder.
+      <div className="border border-dashed border-hairline bg-paper p-10 text-sm text-slate">
+        Konfirmasi pesanan akan tampil di sini setelah backend terhubung.
       </div>
     </PageShell>
   )

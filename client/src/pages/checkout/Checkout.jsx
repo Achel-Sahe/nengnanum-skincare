@@ -4,11 +4,11 @@ export function Checkout() {
   return (
     <PageShell
       title="Checkout"
-      description="Checkout requires a customer session. Shipping address, shipping method, and payment will come from the server."
+      description="Checkout memerlukan sesi pelanggan. Alamat pengiriman, metode pengiriman, dan pembayaran akan tersedia setelah backend terhubung."
     >
       {/* TODO: checkout form + POST /orders + payment redirect. Never compute totals client-side. */}
-      <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-sm text-stone-500">
-        Checkout placeholder.
+      <div className="border border-dashed border-hairline bg-paper p-10 text-sm text-slate">
+        Form checkout akan tampil di sini setelah backend terhubung.
       </div>
     </PageShell>
   )

@@ -51,7 +51,7 @@ export function ProductCard({ product, onAdd }) {
         </span>
         <button
           type="button"
-          aria-label={saved ? `Remove ${product.name} from saved pieces` : `Save ${product.name}`}
+          aria-label={saved ? `Hapus ${product.name} dari simpanan` : `Simpan ${product.name}`}
           aria-pressed={saved}
           onClick={() => setSaved((current) => !current)}
           className={`absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-ivory/90 transition-colors ${saved ? 'text-champagne' : 'text-ink hover:text-champagne'}`}
@@ -69,15 +69,15 @@ export function ProductCard({ product, onAdd }) {
         </p>
         <div className="mt-4 flex items-center justify-between border-t border-hairline pt-4">
           <span className="font-display text-lg text-ink">
-            {formatPrice(product.price, 'USD')}
+            {formatPrice(product.price)}
           </span>
           {onAdd && (
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => onAdd(product)}
-                aria-label={`Add ${product.name} to bag`}
-                title="Add to bag"
+                aria-label={`Tambah ${product.name} ke tas`}
+                title="Tambah ke tas"
                 className="grid size-9 place-items-center rounded-full border border-hairline text-ink transition-colors hover:border-champagne hover:text-champagne"
               >
                 <ShoppingBag size={15} strokeWidth={1.4} />
@@ -85,8 +85,8 @@ export function ProductCard({ product, onAdd }) {
               <button
                 type="button"
                 onClick={handleBuy}
-                aria-label={`Buy ${product.name} now`}
-                title="Buy now"
+                aria-label={`Beli ${product.name} sekarang`}
+                title="Beli sekarang"
                 className="grid size-9 place-items-center rounded-full bg-champagne text-ink transition-colors hover:bg-goldlight"
               >
                 <ArrowRight size={16} strokeWidth={1.6} />

@@ -7,12 +7,13 @@ import { Eyebrow } from '../components/layout/SiteChrome.jsx'
 import { faqs } from '../data/content.js'
 
 const categories = [
-  'All inquiries',
-  'Formulations',
-  'Harvest & origin',
-  'Consultations',
-  'Client care',
-  'Gifting',
+  'Semua pertanyaan',
+  'BPOM & halal',
+  'Bahan & formulasi',
+  'Jenis kulit',
+  'Cara pakai',
+  'Konsultasi',
+  'Pengiriman',
 ]
 
 export function QnA() {
@@ -20,14 +21,14 @@ export function QnA() {
   const requestedCategory = searchParams.get('category')
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState(() =>
-    categories.includes(requestedCategory) ? requestedCategory : 'All inquiries',
+    categories.includes(requestedCategory) ? requestedCategory : 'Semua pertanyaan',
   )
-  const [openItems, setOpenItems] = useState(() => new Set(['gold-infusion']))
+  const [openItems, setOpenItems] = useState(() => new Set(['bpom-halal']))
 
   const filteredFaqs = useMemo(() => {
     const normalized = query.trim().toLowerCase()
     return faqs.filter((item) => {
-      const matchesCategory = category === 'All inquiries' || item.category === category
+      const matchesCategory = category === 'Semua pertanyaan' || item.category === category
       const matchesQuery =
         !normalized ||
         `${item.question} ${item.answer} ${item.category}`.toLowerCase().includes(normalized)
@@ -48,32 +49,31 @@ export function QnA() {
     <>
       <section className="bg-ink text-ivory">
         <div className="mx-auto flex subpage-hero max-w-atelier flex-col justify-center px-6 pb-14 pt-14 text-center sm:px-8 sm:pb-16 sm:pt-20 lg:px-12">
-          <Eyebrow>Atelier archive · client care</Eyebrow>
+          <Eyebrow>Nengnanum Beauty · Tanya jawab</Eyebrow>
           <h1 className="mt-5 font-display text-5xl leading-[.98] tracking-[-0.03em] sm:text-7xl">
-            Inquiries &amp;
+            Pertanyaan &amp;
             <br />
-            <em className="font-normal text-goldlight">Revelations</em>
+            <em className="font-normal text-goldlight">Jawaban</em>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-sans text-sm leading-6 text-ivory/65 sm:text-base">
-            A considered guide to our botanical formulations, rare fragrances, and atelier
-            services.
+            Temukan jawaban seputar bahan, keamanan, dan cara pakai produk Nengnanum Beauty.
           </p>
           <div className="mx-auto mt-8 flex max-w-2xl items-center border-b border-champagne/50 pb-2">
             <Search size={18} className="mr-3 shrink-0 text-champagne" />
             <label className="sr-only" htmlFor="faq-search">
-              Search the atelier archive
+              Cari pertanyaan
             </label>
             <input
               id="faq-search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search the atelier archive"
+              placeholder="Cari pertanyaan..."
               className="min-w-0 flex-1 scroll-mt-24 bg-transparent py-3 font-sans text-sm text-ivory outline-none placeholder:text-ivory/40"
             />
             {query && (
               <button
                 type="button"
-                aria-label="Clear search"
+                aria-label="Hapus pencarian"
                 onClick={() => setQuery('')}
                 className="grid h-8 w-8 place-items-center text-ivory/60 hover:text-champagne"
               >
@@ -81,7 +81,7 @@ export function QnA() {
               </button>
             )}
             <span className="hidden pl-4 font-sans text-[9px] uppercase tracking-[0.16em] text-goldlight sm:block">
-              Search
+              Cari
             </span>
           </div>
         </div>
@@ -91,20 +91,20 @@ export function QnA() {
         <div className="mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col gap-6 border-b border-hairline pb-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <Eyebrow>Curated inquiries</Eyebrow>
-              <h2 className="mt-3 font-display text-4xl text-ink sm:text-5xl">A little guidance.</h2>
+              <Eyebrow>Panduan singkat</Eyebrow>
+              <h2 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Yang sering ditanyakan.</h2>
               <p className="mt-3 max-w-xl font-sans text-sm leading-6 text-slate">
-                Notes on our ingredients, sourcing, private services, and delivery.
+                Catatan seputar BPOM, halal, bahan, jenis kulit, dan pengiriman.
               </p>
             </div>
             <p className="font-sans text-xs text-slate">
-              {filteredFaqs.length} {filteredFaqs.length === 1 ? 'answer' : 'answers'}
+              {filteredFaqs.length} jawaban
             </p>
           </div>
           <div
             className="mt-6 flex gap-3 overflow-x-auto pb-3"
             role="group"
-            aria-label="Filter inquiries by category"
+            aria-label="Filter pertanyaan berdasarkan kategori"
           >
             {categories.map((item) => (
               <button
@@ -121,15 +121,15 @@ export function QnA() {
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[.74fr_1.7fr]">
             <aside className="h-fit bg-ink px-6 py-7 text-ivory sm:px-8">
-              <Eyebrow>From the apothecary</Eyebrow>
-              <h3 className="mt-4 font-display text-3xl">The alchemy of purity</h3>
+              <Eyebrow>Dari Nengnanum</Eyebrow>
+              <h3 className="mt-4 font-display text-3xl">Aman, lembut, teruji.</h3>
               <div className="my-5 h-px w-12 bg-champagne" />
               <p className="font-sans text-sm leading-6 text-ivory/65">
-                Every creation is shaped by careful sourcing, considered formulation, and a patient
-                approach to craft.
+                Setiap produk Nengnanum Beauty dirancang dengan bahan pilihan dan formula lembut,
+                untuk kulit sehat yang terawat setiap hari.
               </p>
               <p className="mt-7 border-t border-white/15 pt-5 font-sans text-[9px] uppercase tracking-[0.17em] text-goldlight">
-                Oud · rose · myrrh
+                BPOM · Halal · untuk semua
               </p>
             </aside>
             <div>
@@ -172,29 +172,29 @@ export function QnA() {
                 </div>
               ) : (
                 <div className="border-y border-hairline py-16 text-center">
-                  <p className="font-display text-2xl text-ink">No matching inquiries.</p>
+                  <p className="font-display text-2xl text-ink">Tidak ada pertanyaan yang cocok.</p>
                   <p className="mt-2 font-sans text-sm text-slate">
-                    Try a different phrase or category.
+                    Coba kata kunci atau kategori lain.
                   </p>
                   <button
                     type="button"
                     onClick={() => {
                       setQuery('')
-                      setCategory('All inquiries')
+                      setCategory('Semua pertanyaan')
                     }}
                     className="mt-5 font-sans text-[10px] uppercase tracking-[0.16em] text-champagne"
                   >
-                    Reset filters
+                    Reset filter
                   </button>
                 </div>
               )}
               <p className="mt-6 font-sans text-sm text-slate">
-                Still have a question?{' '}
+                Masih ada pertanyaan?{' '}
                 <Link
                   to="/contact"
                   className="ml-1 inline-flex items-center gap-1 text-ink underline decoration-champagne underline-offset-4 hover:text-champagne"
                 >
-                  Contact client care <ArrowRight size={13} />
+                  Hubungi customer care <ArrowRight size={13} />
                 </Link>
               </p>
             </div>
@@ -209,19 +209,19 @@ export function QnA() {
         <div className="mx-auto max-w-atelier border border-champagne/25 bg-[radial-gradient(ellipse_at_0%_0%,rgba(35,42,112,.65),transparent_58%)] px-6 py-10 sm:px-12 sm:py-14">
           <div className="grid gap-8 md:grid-cols-[1.35fr_.65fr] md:items-center">
             <div>
-              <Eyebrow>Private client services</Eyebrow>
+              <Eyebrow>Bantuan personal</Eyebrow>
               <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">
-                Still seeking atelier guidance?
+                Butuh panduan untuk kulitmu?
               </h2>
               <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-ivory/65">
-                Our fragrance specialists and skincare formulators are available for considered,
-                private guidance.
+                Tim Nengnanum Beauty siap membantu memilih rangkaian yang sesuai dengan jenis
+                kulit dan kebutuhanmu.
               </p>
             </div>
             <div className="flex flex-col gap-4 md:items-start">
-              <PrimaryButton to="/contact">Contact the atelier</PrimaryButton>
+              <PrimaryButton to="/contact">Hubungi kami</PrimaryButton>
               <p className="font-sans text-xs text-ivory/45">
-                Browse the atelier’s appointment notes and service details.
+                Konsultasi gratis lewat WhatsApp atau form kontak.
               </p>
             </div>
           </div>

@@ -10,76 +10,76 @@ const pillars = [
   {
     icon: Flower2,
     roman: 'I',
-    title: 'Nocturnal botanicals',
-    text: 'Rare blossoms and aromatic materials, gathered with care at their most expressive moment.',
-    note: 'Botanical provenance',
+    title: 'Terdaftar BPOM',
+    text: 'Setiap produk teruji ketat dan memenuhi standar keamanan BPOM sebelum sampai ke tanganmu.',
+    note: 'Aman & teruji',
   },
   {
     icon: Droplets,
     roman: 'II',
-    title: 'Damascene stills',
-    text: 'A slow distillation tradition, carried forward with a considered, modern atelier hand.',
-    note: 'Inherited craft',
+    title: 'Bersertifikat halal',
+    text: 'Bersih, murni, dan tenang dipakai semua kalangan—untuk pria maupun wanita.',
+    note: 'Halal MUI',
   },
   {
     icon: Clock3,
     roman: 'III',
-    title: 'Horlogerie precision',
-    text: 'Measured refinement and patient maturation, where time is part of the composition.',
-    note: 'Measured refinement',
+    title: 'Bahan pilihan',
+    text: 'Diracik dari bahan berkualitas tinggi yang benar-benar bekerja untuk kulitmu, bukan sekadar janji.',
+    note: 'Bahan terbaik',
   },
 ]
 
 const stages = [
   {
     no: '01',
-    title: 'Predawn harvest',
-    text: 'Petals gathered at first light, selected for their delicate aromatic character.',
-    detail: '03:00–05:30',
+    title: 'Bersihkan & segarkan',
+    text: 'Mulai dari kulit yang bersih agar produk berikutnya meresap dengan baik.',
+    detail: 'Pagi & malam',
   },
   {
     no: '02',
-    title: 'Slow hydro-distillation',
-    text: 'Botanical materials are distilled in copper stills through a patient extraction process.',
-    detail: 'A slow atelier process',
+    title: 'Nutrisi & lembapkan',
+    text: 'Gunakan serum, lalu kunci kelembapannya dengan pelembap yang sesuai.',
+    detail: 'Sesuai kebutuhan kulit',
   },
   {
     no: '03',
-    title: 'Rest & maturation',
-    text: 'The finished composition rests before presentation in a limited seasonal edition.',
-    detail: 'Numbered editions',
+    title: 'Lindungi & rawat',
+    text: 'Jaga kelembapan alami dan konsisten merawat kulit setiap hari.',
+    detail: 'Rutin setiap hari',
   },
 ]
 
 const figures = [
-  ['36+', 'Years of alchemy', 'An atelier story since 1988'],
-  ['100%', 'Heirloom petals', 'Botanical tradition'],
-  ['420', 'Flacons per batch', 'Numbered & signed'],
-  ['24K', 'Colloidal gold', 'A signature detail'],
+  ['BPOM', 'Terdaftar', 'Standar keamanan teruji'],
+  ['Halal', 'Bersertifikat', 'Tenang dipakai'],
+  ['100%', 'Untuk semua', 'Pria & wanita'],
+  ['8+', 'Manfaat kulit', 'Lembap, cerah, rata'],
 ]
 
 function HeritageFAQ() {
   const heritageFAQs = faqs.filter(({ id }) =>
-    ['rose-harvest', 'gold-infusion', 'consultation'].includes(id),
+    ['bpom-halal', 'bahan', 'konsultasi'].includes(id),
   )
-  const [openId, setOpenId] = useState('rose-harvest')
+  const [openId, setOpenId] = useState('bpom-halal')
 
   return (
     <section className="bg-ivory py-20 sm:py-24">
       <div className="mx-auto grid max-w-atelier gap-10 px-6 sm:px-8 lg:grid-cols-[.75fr_1.25fr] lg:px-12">
         <div>
-          <Eyebrow>Atelier archive</Eyebrow>
+          <Eyebrow>Tanya jawab</Eyebrow>
           <h2 className="mt-3 font-display text-4xl leading-tight text-ink sm:text-5xl">
-            A few thoughtful answers.
+            Beberapa jawaban yang sering dicari.
           </h2>
           <p className="mt-4 max-w-md font-sans text-sm leading-6 text-slate">
-            Notes on botanical origin, considered formulas, and private consultations.
+            Catatan seputar BPOM, halal, bahan, dan cara memilih perawatan untuk kulitmu.
           </p>
           <Link
             to="/qna"
             className="mt-7 inline-flex items-center gap-2 border-b border-champagne pb-2 font-sans text-[10px] uppercase tracking-[0.17em] text-ink hover:text-champagne"
           >
-            Visit all inquiries <ArrowRight size={14} />
+            Lihat semua pertanyaan <ArrowRight size={14} />
           </Link>
         </div>
         <div className="divide-y divide-hairline border-y border-hairline">
@@ -129,39 +129,39 @@ export function About() {
       <section className="overflow-hidden bg-ink text-ivory">
         <div className="mx-auto grid subpage-hero max-w-atelier items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12 lg:py-20">
           <div className="max-w-xl">
-            <Eyebrow>The heritage monograph</Eyebrow>
+            <Eyebrow>Tentang Nengnanum Beauty</Eyebrow>
             <h1 className="mt-6 font-display text-6xl leading-[.94] tracking-[-0.04em] sm:text-7xl">
-              Born in Darkness,
+              Cantik Berseri,
               <br />
-              <em className="font-normal text-goldlight">Sculpted in Light.</em>
+              <em className="font-normal text-goldlight">Aman Seutuhnya.</em>
             </h1>
             <p className="mt-7 max-w-lg font-sans text-sm leading-6 text-ivory/65 sm:text-base sm:leading-7">
-              Where Damascene rose traditions meet a contemporary atelier hand. A quiet tribute to
-              nocturnal botanicals, patient craft, and luminous ritual.
+              Nengnanum Beauty lahir dari keyakinan sederhana: kulit sehat adalah hak semua orang.
+              Pria maupun wanita, semua berhak punya kulit yang lembut, cerah, dan terawat.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <PrimaryButton href="#foundation">Explore the chronicle</PrimaryButton>
-              <TextLink to="/qna?category=Consultations#faq-search" light>
-                Consultation guidance
+              <PrimaryButton href="#foundation">Kenali nilai kami</PrimaryButton>
+              <TextLink to="/qna?category=Konsultasi#faq-search" light>
+                Tanya tim kami
               </TextLink>
             </div>
             <div className="mt-12 grid max-w-md grid-cols-3 gap-5 border-t border-white/15 pt-5">
               <div>
-                <span className="font-display text-2xl text-goldlight">1988</span>
+                <span className="font-display text-2xl text-goldlight">BPOM</span>
                 <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.12em] text-ivory/45">
-                  Atelier roots
+                  Terdaftar
                 </p>
               </div>
               <div>
-                <span className="font-display text-2xl text-goldlight">420</span>
+                <span className="font-display text-2xl text-goldlight">Halal</span>
                 <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.12em] text-ivory/45">
-                  Seasonal flacons
+                  Bersertifikat
                 </p>
               </div>
               <div>
-                <span className="font-display text-2xl text-goldlight">24K</span>
+                <span className="font-display text-2xl text-goldlight">Semua</span>
                 <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.12em] text-ivory/45">
-                  Gold detail
+                  Pria &amp; wanita
                 </p>
               </div>
             </div>
@@ -170,12 +170,12 @@ export function About() {
             <div className="absolute -inset-4 rounded-t-[14rem] border border-champagne/35" />
             <img
               src="/images/heritage-hero.jpg"
-              alt="A blue Nengnanum flacon set against a warm, glowing atelier backdrop"
+              alt="Rangkaian perawatan Nengnanum Beauty dengan latar hangat"
               className="relative aspect-[.88/1] w-full rounded-t-[13rem] object-cover"
             />
             <div className="absolute bottom-5 left-5 bg-midnight/90 px-5 py-4">
-              <p className="eyebrow text-champagne">Imperial reserve</p>
-              <p className="mt-1 font-display text-xl text-ivory">Damascene Absolute</p>
+              <p className="eyebrow text-champagne">Nengnanum Beauty</p>
+              <p className="mt-1 font-display text-xl text-ivory">Sehat &amp; berseri</p>
             </div>
           </div>
         </div>
@@ -184,9 +184,9 @@ export function About() {
       <section id="foundation" className="bg-ivory py-20 sm:py-24">
         <div className="mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
           <SectionHeading
-            eyebrow="Our foundation & ethos"
-            title="The triad of eternal alchemy"
-            description="Three principles guide each formulation: botanical provenance, inherited craft, and considered refinement."
+            eyebrow="Nilai yang kami pegang"
+            title="Perawatan yang tumbuh bersama kamu"
+            description="Bukan hasil kilat yang menipu—tapi keindahan yang terbentuk hari demi hari, dari bahan yang aman dan formula yang lembut."
             align="center"
           />
           <div className="mt-12 grid gap-8 border-t border-hairline pt-8 md:grid-cols-3">
@@ -216,20 +216,20 @@ export function About() {
             <div className="absolute -left-4 -top-4 h-full w-full border border-champagne/35" />
             <img
               src="/images/rose-harvest.jpg"
-              alt="An artisan pouring a botanical distillation in the atelier"
+              alt="Bahan botanik yang diolah dengan hati-hati untuk Nengnanum Beauty"
               loading="lazy"
               className="relative aspect-[1.2/1] w-full object-cover"
             />
           </div>
           <div className="md:pl-4">
             <SectionHeading
-              eyebrow="Historical record · archive no. 19"
-              title="The sacred rhythm of Damascus roses"
-              description="Our rose story begins in the quiet hours of the harvest. Carefully gathered petals are handled with restraint, preserving the character of the botanical material through a patient distillation tradition."
+              eyebrow="Rangkaian manfaat"
+              title="Seribu manfaat dalam satu rangkaian"
+              description="Melembapkan tahan lama, mencerahkan kulit kusam, membantu memudarkan noda dan bekas jerawat, meratakan warna kulit, menjaga elastisitas, serta menutrisi dari dalam."
               light
             />
             <TextLink to="/qna" light className="mt-8">
-              Read the botanical monograph
+              Lihat panduan perawatan
             </TextLink>
           </div>
         </div>
@@ -240,26 +240,26 @@ export function About() {
           <div className="mx-auto w-full max-w-[420px] overflow-hidden bg-paper">
             <img
               src="/images/founder-atelier.jpg"
-              alt="Atelier founder Mireille Al-Mansoor in her fragrance studio"
+              alt="Tim Nengnanum Beauty meracik perawatan dengan teliti"
               loading="lazy"
               className="aspect-[.86/1] w-full object-cover object-right"
             />
           </div>
           <div>
-            <Eyebrow>The master’s conviction</Eyebrow>
+            <Eyebrow>Yang kami percaya</Eyebrow>
             <blockquote className="mt-6 font-display text-3xl italic leading-[1.15] text-ink sm:text-4xl">
-              “True luxury lies not in excess, but in the patience of extraction. If an oil requires
-              three moons to settle into harmony, we grant it four.”
+              “Kulit sehat bukan kemewahan. Setiap orang berhak merasa nyaman dan percaya diri
+              dengan kulitnya sendiri.”
             </blockquote>
             <p className="mt-6 max-w-2xl font-sans text-sm leading-6 text-slate">
-              Mireille Al-Mansoor leads the atelier with a belief in slow craft, botanical precision,
-              and formulas made with intention. Her work bridges Damascene heritage with a modern,
-              considered approach to fragrance and skincare.
+              Nengnanum Beauty hadir menemani perjalananmu mencintai kulitmu. Kami memilih bahan
+              dengan hati-hati, merancang formula yang lembut, dan memastikan setiap produk aman
+              dipakai jangka panjang.
             </p>
             <div className="mt-7 border-t border-hairline pt-5">
-              <p className="font-display text-2xl italic text-champagne">Mireille Al-Mansoor</p>
+              <p className="font-display text-2xl italic text-champagne">Nengnanum Beauty</p>
               <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.17em] text-slate">
-                Master nose &amp; co-founder · Paris · Damascus · Geneva
+                Skincare untuk semua · Indonesia
               </p>
             </div>
           </div>
@@ -269,9 +269,9 @@ export function About() {
       <section id="process" className="bg-ink py-20 text-ivory sm:py-24">
         <div className="mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
           <SectionHeading
-            eyebrow="The sourcing & maturation cycle"
-            title="The alchemy of creation"
-            description="A measured three-stage journey, from harvest to final flacon."
+            eyebrow="Ritual harian"
+            title="Tiga langkah merawat kulitmu"
+            description="Sederhana, konsisten, dan lembut—untuk kulit yang sehat setiap hari."
             light
           />
           <div className="mt-12 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-3">
@@ -306,23 +306,23 @@ export function About() {
       <section className="bg-midnight px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
         <div className="mx-auto grid max-w-atelier gap-10 border border-champagne/25 bg-[radial-gradient(ellipse_at_0%_0%,rgba(35,42,112,.7),transparent_55%)] p-7 sm:p-12 md:grid-cols-[1.2fr_.8fr] md:items-center">
           <div>
-            <Eyebrow>Private atelier consultation</Eyebrow>
+            <Eyebrow>Butuh panduan?</Eyebrow>
             <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-ivory sm:text-5xl">
-              An invitation to the private salons.
+              Rawat kulitmu, bukan sekadar mengobatinya.
             </h2>
             <p className="mt-4 max-w-xl font-sans text-sm leading-6 text-ivory/65">
-              Explore a bespoke fragrance conversation or considered skincare guidance with our
-              atelier team.
+              Ceritakan jenis kulit dan masalah yang ingin kamu rawat. Tim Nengnanum Beauty siap
+              membantu memilih rangkaian yang paling sesuai.
             </p>
-            <PrimaryButton to="/qna?category=Consultations#faq-search" className="mt-7">
-              Explore consultation guidance
+            <PrimaryButton to="/qna?category=Konsultasi#faq-search" className="mt-7">
+              Tanya tim kami
             </PrimaryButton>
           </div>
           <div className="border-t border-white/15 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-            <p className="eyebrow text-champagne">Parisian suite</p>
-            <p className="mt-2 font-display text-xl text-ivory">By appointment</p>
-            <p className="mt-6 eyebrow text-champagne">Damascus sanctuary</p>
-            <p className="mt-2 font-display text-xl text-ivory">Private atelier</p>
+            <p className="eyebrow text-champagne">Konsultasi</p>
+            <p className="mt-2 font-display text-xl text-ivory">Online &amp; gratis</p>
+            <p className="mt-6 eyebrow text-champagne">Customer care</p>
+            <p className="mt-2 font-display text-xl text-ivory">WhatsApp &amp; email</p>
           </div>
         </div>
       </section>

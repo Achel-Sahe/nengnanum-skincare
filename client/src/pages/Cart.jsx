@@ -13,17 +13,17 @@ export function Cart() {
 
   return (
     <PageShell
-      title="Your atelier bag"
-      description="Quantities are revalidated against real stock and pricing during checkout."
+      title="Tas belanja"
+      description="Jumlah produk dan harga akan dikonfirmasi kembali saat checkout."
     >
       {items.length === 0 ? (
         <div className="border border-hairline bg-paper p-10 text-center">
-          <p className="font-sans text-sm text-slate">Your bag is empty.</p>
+          <p className="font-sans text-sm text-slate">Tasmu masih kosong.</p>
           <Link
             to="/shop"
             className="mt-5 inline-flex bg-champagne px-6 py-3 font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:bg-goldlight"
           >
-            Explore the collection
+            Lihat koleksi
           </Link>
         </div>
       ) : (
@@ -40,7 +40,7 @@ export function Cart() {
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-display text-lg text-ink">{item.name}</p>
                   <p className="mt-1 font-sans text-sm text-slate">
-                    {formatPrice(item.price, 'USD')}
+                    {formatPrice(item.price)}
                   </p>
                 </div>
 
@@ -49,14 +49,14 @@ export function Cart() {
                   min="1"
                   value={item.quantity}
                   onChange={(event) => updateQuantity(item.variantId, event.target.value)}
-                  aria-label={`Quantity for ${item.name}`}
+                  aria-label={`Jumlah untuk ${item.name}`}
                   className="w-16 border border-hairline bg-transparent px-2 py-1.5 font-sans text-sm text-ink"
                 />
 
                 <button
                   type="button"
                   onClick={() => removeItem(item.variantId)}
-                  aria-label={`Remove ${item.name}`}
+                  aria-label={`Hapus ${item.name}`}
                   className="p-2 text-slate transition hover:text-champagne"
                 >
                   <Trash2 className="size-4" />
@@ -68,16 +68,16 @@ export function Cart() {
           <aside className="h-fit border border-hairline bg-paper p-5">
             <div className="flex items-center justify-between font-sans text-sm">
               <span className="text-slate">Subtotal</span>
-              <span className="font-medium text-ink">{formatPrice(subtotal, 'USD')}</span>
+              <span className="font-medium text-ink">{formatPrice(subtotal)}</span>
             </div>
             <p className="mt-2 font-sans text-xs leading-5 text-slate">
-              Shipping and taxes are calculated on the server at checkout.
+              Ongkos kirim dan pajak dihitung saat checkout.
             </p>
             <Link
               to="/checkout"
               className="mt-5 flex justify-center bg-champagne px-5 py-3 font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:bg-goldlight"
             >
-              Continue to checkout
+              Lanjut ke checkout
             </Link>
           </aside>
         </div>

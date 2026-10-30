@@ -88,14 +88,14 @@ export function Team() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_46%,rgba(35,42,112,.55),transparent_48%)]" />
         <div className="relative mx-auto grid subpage-hero max-w-atelier items-center gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12">
           <div className="max-w-2xl">
-            <Eyebrow>The Nengnanum community</Eyebrow>
-            <h1 className="mt-6 font-display text-6xl leading-[.96] tracking-[-0.035em] sm:text-7xl">Meet Our Team</h1>
-            <p className="mt-5 font-display text-3xl italic text-goldlight sm:text-4xl">A closer connection to beauty.</p>
-            <p className="mt-6 max-w-lg font-sans text-sm leading-6 text-ivory/65 sm:text-base">Meet the Nengnanum Beauty resellers.</p>
+            <Eyebrow>Komunitas Nengnanum</Eyebrow>
+            <h1 className="mt-6 font-display text-6xl leading-[.96] tracking-[-0.035em] sm:text-7xl">Kenalan dengan Tim Kami</h1>
+            <p className="mt-5 font-display text-3xl italic text-goldlight sm:text-4xl">Lebih dekat dengan kecantikan.</p>
+            <p className="mt-6 max-w-lg font-sans text-sm leading-6 text-ivory/65 sm:text-base">Kenali reseller Nengnanum Beauty di sekitarmu.</p>
             <a href="#our-team" className="mt-9 inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.18em] text-goldlight transition-colors hover:text-champagne">
-              Meet the team <ArrowRight size={14} />
+              Kenali tim <ArrowRight size={14} />
             </a>
-            <div className="mt-10 border-t border-white/15 pt-4 font-sans text-[9px] uppercase tracking-[0.18em] text-ivory/45">Six resellers · One community</div>
+            <div className="mt-10 border-t border-white/15 pt-4 font-sans text-[9px] uppercase tracking-[0.18em] text-ivory/45">Enam reseller · Satu komunitas</div>
           </div>
           <div aria-hidden="true" className="relative mx-auto hidden aspect-square w-full max-w-[340px] items-center justify-center lg:flex">
             <span className="absolute inset-4 rounded-full border border-champagne/15" />
@@ -112,8 +112,8 @@ export function Team() {
       <section id="our-team" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col justify-between gap-5 border-b border-hairline pb-6 sm:flex-row sm:items-end">
-            <SectionHeading eyebrow="Our people" title="The team" />
-            <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-slate">06 resellers</p>
+            <SectionHeading eyebrow="Orang-orang kami" title="Tim kami" />
+            <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-slate">06 reseller</p>
           </div>
           <div className="mt-10 grid gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-16">
             {resellers.map((person, index) => <ResellerCard key={person.name} person={person} index={index} />)}
@@ -124,7 +124,7 @@ export function Team() {
       <section className="bg-ink px-6 py-16 text-ivory sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="mx-auto max-w-atelier text-center">
           <div aria-hidden="true" className="mx-auto mb-7 grid h-12 w-12 place-items-center rounded-full border border-champagne/55 font-display text-xl text-goldlight">N</div>
-          <Eyebrow>Grow with us</Eyebrow>
+          <Eyebrow>Tumbuh bersama kami</Eyebrow>
           <h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl leading-tight sm:text-4xl">Ingin Bergabung Menjadi Reseller Kami</h2>
           <p className="mt-2 font-display text-2xl italic text-goldlight sm:text-3xl">Klik Link Dibawah ini</p>
           <a
@@ -133,9 +133,9 @@ export function Team() {
             rel="noopener noreferrer"
             className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 bg-champagne px-7 py-4 font-sans text-[10px] font-semibold uppercase tracking-[0.17em] text-ink transition-colors hover:bg-goldlight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne"
           >
-            Join Reseller <ArrowUpRight size={15} />
+            Gabung Reseller <ArrowUpRight size={15} />
           </a>
-          <p className="mt-4 font-sans text-[9px] uppercase tracking-[0.16em] text-ivory/40">Continue the conversation on WhatsApp</p>
+          <p className="mt-4 font-sans text-[9px] uppercase tracking-[0.16em] text-ivory/40">Lanjutkan percakapan di WhatsApp</p>
         </div>
       </section>
     </>

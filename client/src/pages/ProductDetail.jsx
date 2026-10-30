@@ -7,11 +7,11 @@ export function ProductDetail() {
 
   return (
     <PageShell
-      title="Product detail"
-      description="Gallery, ingredients, usage instructions, variants, and stock will load from GET /products/:slug."
+      title="Detail produk"
+      description="Galeri, bahan, cara pakai, varian, dan stok akan dimuat dari data produk."
     >
-      <div className="rounded-2xl border border-dashed border-stone-300 bg-white p-10 text-sm text-stone-500">
-        Placeholder for <span className="font-medium text-stone-800">{slug}</span>.
+      <div className="border border-dashed border-hairline bg-paper p-10 text-sm text-slate">
+        Halaman detail untuk <span className="font-medium text-ink">{slug}</span> akan segera tersedia.
       </div>
     </PageShell>
   )

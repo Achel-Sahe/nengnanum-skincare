@@ -5,24 +5,24 @@ import { ArrowRight, ChevronDown, Menu, Search, ShoppingBag, X } from 'lucide-re
 import { useCartStore } from '../../features/cart/store.js'
 
 const aboutLinks = [
-  { label: 'About us', to: '/about-us' },
+  { label: 'Tentang Kami', to: '/about-us' },
   { label: 'QnA', to: '/qna' },
 ]
 
 const links = [
-  { label: 'Home', to: '/' },
-  { label: 'About', children: aboutLinks },
-  { label: 'Shop', to: '/shop' },
-  { label: 'Team', to: '/team' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Beranda', to: '/' },
+  { label: 'Tentang', children: aboutLinks },
+  { label: 'Koleksi', to: '/shop' },
+  { label: 'Tim', to: '/team' },
+  { label: 'Jurnal', to: '/blog' },
+  { label: 'Kontak', to: '/contact' },
 ]
 
 const currentYear = new Date().getFullYear()
 
 export function BrandMark({ light = true }) {
   return (
-    <Link to="/" className="inline-flex items-center gap-3" aria-label="Nengnanum Beauty home">
+    <Link to="/" className="inline-flex items-center gap-3" aria-label="Beranda Nengnanum Beauty">
       <span className="relative grid h-9 w-9 place-items-center rounded-full border border-champagne/60 text-champagne">
         <span className="absolute inset-[4px] rounded-full border border-champagne/25" />
         <span className="font-display text-[19px] leading-none">N</span>
@@ -50,7 +50,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-ivory backdrop-blur-xl">
       <div className="mx-auto flex h-[74px] max-w-atelier items-center justify-between px-5 sm:px-8 lg:px-12">
         <BrandMark />
-        <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Navigasi utama">
           {links.map(({ label, to, children }) =>
             children ? (
               <div
@@ -113,12 +113,12 @@ export function SiteHeader() {
         <div className="flex items-center gap-1">
           <Link
             to="/qna"
-            aria-label="Search questions and answers"
+            aria-label="Cari pertanyaan dan jawaban"
             className="header-icon hidden sm:grid"
           >
             <Search size={17} strokeWidth={1.5} />
           </Link>
-          <Link to="/cart" aria-label={`Shopping bag, ${cartCount} items`} className="header-icon relative">
+          <Link to="/cart" aria-label={`Tas belanja, ${cartCount} item`} className="header-icon relative">
             <ShoppingBag size={17} strokeWidth={1.5} />
             {cartCount > 0 && (
               <span className="absolute -right-0.5 -top-0.5 grid h-4 min-w-4 place-items-center rounded-full bg-champagne px-1 text-[9px] font-semibold text-ink">
@@ -129,7 +129,7 @@ export function SiteHeader() {
           <button
             type="button"
             className="ml-2 grid h-10 w-10 place-items-center text-ivory md:hidden"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={menuOpen ? 'Tutup menu' : 'Buka menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
@@ -140,7 +140,7 @@ export function SiteHeader() {
       {menuOpen && (
         <nav
           className="border-t border-white/10 bg-midnight px-5 py-4 md:hidden"
-          aria-label="Mobile navigation"
+          aria-label="Navigasi mobile"
         >
           {links.map(({ label, to, children }) =>
             children ? (
@@ -209,75 +209,75 @@ export function SiteFooter() {
         <div>
           <BrandMark />
           <p className="mt-5 max-w-xs font-sans text-sm leading-6 text-ivory/55">
-            Haute parfumerie and botanical skincare, shaped by Damascene heritage and a patient
-            atelier hand.
+            Skincare halal dan terdaftar BPOM untuk pria dan wanita. Kulit sehat, cerah, dan
+            terawat—bukan hasil instan.
           </p>
         </div>
         <div>
-          <p className="eyebrow text-champagne">The atelier</p>
+          <p className="eyebrow text-champagne">Nengnanum</p>
           <div className="mt-5 space-y-3 font-sans text-sm text-ivory/65">
             <Link className="footer-link" to="/about-us">
-              Our story
+              Cerita kami
             </Link>
             <Link className="footer-link" to="/shop">
-              The collection
+              Lihat koleksi
             </Link>
             <Link className="footer-link" to="/about-us#process">
-              Craft &amp; sourcing
+              Nilai &amp; bahan
             </Link>
           </div>
         </div>
         <div>
-          <p className="eyebrow text-champagne">Concierge</p>
+          <p className="eyebrow text-champagne">Bantuan</p>
           <div className="mt-5 space-y-3 font-sans text-sm text-ivory/65">
             <Link className="footer-link" to="/qna">
-              Inquiries &amp; FAQ
+              Tanya jawab
             </Link>
             <Link className="footer-link" to="/qna#consultation">
-              Private consultation
+              Konsultasi kulit
             </Link>
             <Link className="footer-link" to="/contact">
-              Client care
+              Customer care
             </Link>
           </div>
         </div>
         <div>
-          <p className="eyebrow text-champagne">The Gazette</p>
+          <p className="eyebrow text-champagne">Jurnal</p>
           <p className="mt-5 max-w-sm font-sans text-sm leading-6 text-ivory/55">
-            Occasional notes on seasonal editions and atelier rituals.
+            Catatan seputar perawatan kulit dan kebiasaan baik untuk kulitmu.
           </p>
           <form onSubmit={submit} className="mt-4 flex border-b border-ivory/25 pb-2">
             <label htmlFor="gazette-email" className="sr-only">
-              Email address
+              Alamat email
             </label>
             <input
               id="gazette-email"
               type="email"
               required
-              placeholder="Your email address"
+              placeholder="Alamat emailmu"
               className="min-w-0 flex-1 bg-transparent py-2 font-sans text-sm text-ivory outline-none placeholder:text-ivory/35"
             />
             <button
               className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.16em] text-champagne"
               type="submit"
             >
-              {subscribed ? 'Preview' : 'Join'} <ArrowRight size={14} />
+              {subscribed ? 'Pratinjau' : 'Ikuti'} <ArrowRight size={14} />
             </button>
           </form>
           {subscribed && (
             <p className="mt-2 font-sans text-xs text-champagne">
-              Preview only — this signup is not connected to a mailing list yet.
+              Pratinjau saja — pendaftaran ini belum terhubung ke mailing list.
             </p>
           )}
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-atelier flex-col gap-3 px-6 py-5 font-sans text-[10px] text-ivory/35 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
-          <span>© {currentYear} Nengnanum Beauty Atelier</span>
+          <span>© {currentYear} Nengnanum Beauty</span>
           <span className="flex flex-wrap gap-x-5 gap-y-2 uppercase tracking-[0.12em]">
-            <Link to="/privacy" className="transition-colors hover:text-champagne">Privacy</Link>
-            <Link to="/terms" className="transition-colors hover:text-champagne">Terms</Link>
-            <Link to="/shipping-returns" className="transition-colors hover:text-champagne">Shipping &amp; returns</Link>
+            <Link to="/privacy" className="transition-colors hover:text-champagne">Privasi</Link>
+            <Link to="/terms" className="transition-colors hover:text-champagne">Ketentuan</Link>
+            <Link to="/shipping-returns" className="transition-colors hover:text-champagne">Pengiriman &amp; pengembalian</Link>
           </span>
         </div>
       </div>

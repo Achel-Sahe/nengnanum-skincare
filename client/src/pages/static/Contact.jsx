@@ -82,10 +82,10 @@ export function Contact() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_42%,rgba(35,42,112,.62),transparent_52%)]" />
         <div className="relative mx-auto grid subpage-hero max-w-atelier items-center gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:px-12 lg:py-20">
           <div className="max-w-2xl">
-            <Eyebrow>Contact · Customer care</Eyebrow>
-            <h1 className="mt-5 font-display text-5xl leading-[1.02] tracking-[-0.03em] sm:text-7xl">Pesan untuk Kami</h1>
+            <Eyebrow>Kontak · Customer care</Eyebrow>
+            <h1 className="mt-5 font-display text-5xl leading-[1.02] tracking-[-0.03em] sm:text-7xl">Ada yang bisa kami bantu?</h1>
             <p className="mt-6 max-w-2xl font-sans text-sm leading-6 text-ivory/65 sm:text-base sm:leading-7">
-              Untuk informasi, kritik, saran dan pelayanan customer service, Anda bisa langsung menghubungi kontak di bawah ini. Atau Anda bisa menulis pesan di form.
+              Untuk informasi produk, kritik, saran, atau bantuan customer service, hubungi kami langsung di bawah ini. Atau tulis pesan lewat form.
             </p>
             <a href="#contact-details" className="mt-8 inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-[0.18em] text-goldlight transition-colors hover:text-champagne">
               Info kontak <ArrowRight size={14} />
@@ -131,7 +131,7 @@ export function Contact() {
             </div>
 
             <div className="border border-hairline bg-paper p-6 sm:p-9 lg:p-10">
-              <Eyebrow>Send us a message</Eyebrow>
+              <Eyebrow>Kirim pesan</Eyebrow>
               <h2 className="mt-3 font-display text-3xl leading-tight text-ink sm:text-4xl">Tuliskan pesan Anda.</h2>
               <p className="mt-3 font-sans text-sm leading-6 text-slate">Pesan akan disiapkan di WhatsApp. Anda dapat meninjau dan mengirimnya dari aplikasi WhatsApp.</p>
 

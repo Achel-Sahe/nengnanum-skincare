@@ -420,7 +420,7 @@ const DepthCarousel = ({
 
       {showIndicators && count > 1 && (
         <div
-          className="absolute bottom-4 left-1/2 z-[3000] flex -translate-x-1/2 gap-2 rounded-full bg-[rgba(14,16,22,0.4)] px-3 py-2 backdrop-blur-sm"
+          className="pointer-events-none absolute -bottom-8 left-1/2 z-[3000] flex -translate-x-1/2 gap-2 sm:-bottom-9 lg:-bottom-10"
           role="tablist"
           aria-label="Navigasi slide"
         >
@@ -431,8 +431,8 @@ const DepthCarousel = ({
               role="tab"
               aria-selected={active === i}
               aria-label={`Ke slide ${i + 1}`}
-              className={`h-[7px] cursor-pointer rounded-full transition-[width,background] duration-[250ms] ${
-                active === i ? 'w-5 bg-white' : 'w-[7px] bg-white/30'
+              className={`pointer-events-auto h-[6px] cursor-pointer rounded-full transition-[width,background] duration-[250ms] ${
+                active === i ? 'w-5 bg-champagne' : 'w-[6px] bg-ivory/40'
               }`}
               onClick={() => setFocus(i, true)}
             />

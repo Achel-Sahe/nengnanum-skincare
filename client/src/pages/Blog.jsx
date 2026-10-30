@@ -127,6 +127,8 @@ export function Blog() {
               visibleCards={4}
               falloff={0.16}
               blur={4}
+              autoplay
+              autoplayDelay={3500}
               showControls
               showIndicators
             />

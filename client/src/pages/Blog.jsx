@@ -1,7 +1,17 @@
 import { ArrowUpRight } from 'lucide-react'
 
 import { Eyebrow, SectionHeading } from '../components/layout/SiteChrome.jsx'
+import DepthCarousel from '../components/DepthCarousel.jsx'
 import { blogPosts } from '../data/blogPosts.js'
+
+const testimonialImages = [
+  { image: '/images/heritage-hero.jpg', alt: 'Testimoni pelanggan Nengnanum Beauty' },
+  { image: '/images/rose-harvest.jpg', alt: 'Testimoni penggunaan produk Nengnanum Beauty' },
+  { image: '/images/founder-atelier.jpg', alt: 'Testimoni hasil perawatan Nengnanum Beauty' },
+  { image: '/images/hero-fragrance.jpg', alt: 'Testimoni parfum Nengnanum Beauty' },
+  { image: '/images/night-serum.jpg', alt: 'Testimoni Nengnanum Glow Serum' },
+  { image: '/images/radiance-cream.jpg', alt: 'Testimoni Nengnanum Radiance Cream' },
+]
 
 function ArticleLink({ href, children, className = '' }) {
   return (
@@ -41,16 +51,16 @@ function FeaturedArticle({ post }) {
   )
 }
 
-function ArticleCard({ post, index }) {
+function ArticleCard({ post, index, bg='bg-paper' }) {
   return (
     <article className="group min-w-0">
-      <ArticleLink href={post.href} className="block overflow-hidden border border-champagne/25 bg-paper">
+      <ArticleLink href={post.href} className={"block overflow-hidden border border-champagne/25 bg-paper"}>
         <ArticleImage
           post={post}
           className="aspect-[1.18/1] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
         />
       </ArticleLink>
-      <div className="pt-5">
+      <div className="pt-5 ">
         <div className="flex items-center justify-between gap-3">
           <Eyebrow>Jurnal · {String(index + 2).padStart(2, '0')}</Eyebrow>
           <time dateTime={post.dateTime} className="shrink-0 font-sans text-[9px] uppercase tracking-[0.1em] text-slate">{post.published}</time>
@@ -86,6 +96,40 @@ export function Blog() {
           {featured && <FeaturedArticle post={featured} />}
           <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-y-16">
             {latest.map((post, index) => <ArticleCard key={post.href} post={post} index={index} />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-ink py-16 text-ivory sm:py-20 lg:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(35,42,112,.55),transparent_60%)]" />
+        <div className="relative mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
+          <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:mb-12">
+            <SectionHeading
+              eyebrow="Testimoni"
+              title="Kata mereka tentang Nengnanum"
+              description="Sorotan testimoni pelanggan Nengnanum Beauty."
+              light
+            />
+            <p className="font-sans text-[9px] uppercase tracking-[0.18em] text-goldlight">
+              Geser atau klik untuk melihat
+            </p>
+          </div>
+          <div className="relative h-[320px] sm:h-[340px] lg:h-[380px]">
+            <DepthCarousel
+              items={testimonialImages}
+              cardWidth={560}
+              cardHeight={340}
+              radius={12}
+              depth={190}
+              spread={110}
+              tilt={14}
+              perspective={1700}
+              visibleCards={4}
+              falloff={0.16}
+              blur={4}
+              showControls
+              showIndicators
+            />
           </div>
         </div>
       </section>

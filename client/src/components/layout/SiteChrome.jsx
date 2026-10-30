@@ -9,10 +9,16 @@ const aboutLinks = [
   { label: 'QnA', to: '/qna' },
 ]
 
+const shopLinks = [
+  { label: 'Semua', to: '/shop' },
+  { label: 'Skincare', to: '/shop/skincare' },
+  { label: 'Parfum', to: '/shop/parfum' },
+]
+
 const links = [
   { label: 'Beranda', to: '/' },
   { label: 'Tentang', children: aboutLinks },
-  { label: 'Koleksi', to: '/shop' },
+  { label: 'Shop', children: shopLinks },
   { label: 'Tim', to: '/team' },
   { label: 'Jurnal', to: '/blog' },
   { label: 'Kontak', to: '/contact' },
@@ -38,13 +44,13 @@ export function BrandMark({ light = true }) {
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [aboutOpen, setAboutOpen] = useState(false)
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState(null)
+  const [mobileOpenMenu, setMobileOpenMenu] = useState(null)
   const { pathname } = useLocation()
   const cartCount = useCartStore((state) =>
     state.items.reduce((total, item) => total + item.quantity, 0),
   )
-  const isAboutActive = aboutLinks.some((link) => pathname.startsWith(link.to))
+  const isGroupActive = (children) => children.some((link) => pathname.startsWith(link.to))
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-ivory backdrop-blur-xl">
@@ -56,37 +62,40 @@ export function SiteHeader() {
               <div
                 key={label}
                 className="relative"
-                onMouseEnter={() => setAboutOpen(true)}
-                onMouseLeave={() => setAboutOpen(false)}
+                onMouseEnter={() => setOpenMenu(label)}
+                onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
                   type="button"
-                  aria-expanded={aboutOpen}
-                  aria-controls="about-menu"
+                  aria-expanded={openMenu === label}
+                  aria-controls={`desktop-menu-${label}`}
                   aria-haspopup="true"
-                  onClick={() => setAboutOpen((open) => !open)}
+                  onClick={() => setOpenMenu((open) => (open === label ? null : label))}
                   onKeyDown={(event) => {
-                    if (event.key === 'Escape') setAboutOpen(false)
+                    if (event.key === 'Escape') setOpenMenu(null)
                   }}
-                  className={`nav-link flex items-center gap-1.5 ${isAboutActive ? 'nav-link-active' : ''}`}
+                  className={`nav-link flex items-center gap-1.5 ${isGroupActive(children) ? 'nav-link-active' : ''}`}
                 >
                   {label}
                   <ChevronDown
                     size={12}
-                    className={`transition-transform ${aboutOpen ? 'rotate-180' : ''}`}
+                    className={`transition-transform ${openMenu === label ? 'rotate-180' : ''}`}
                   />
                 </button>
                 <div
-                  id="about-menu"
+                  id={`desktop-menu-${label}`}
                   className={`absolute left-1/2 top-full w-48 -translate-x-1/2 border border-champagne/25 bg-midnight shadow-gold transition-all duration-200 ${
-                    aboutOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'
+                    openMenu === label
+                      ? 'visible translate-y-0 opacity-100'
+                      : 'invisible -translate-y-1 opacity-0'
                   }`}
                 >
                   {children.map((child) => (
                     <NavLink
                       key={child.to}
                       to={child.to}
-                      onClick={() => setAboutOpen(false)}
+                      end={child.to === '/shop'}
+                      onClick={() => setOpenMenu(null)}
                       className={({ isActive }) =>
                         `block border-b border-white/10 px-5 py-3.5 font-sans text-[10px] uppercase tracking-[0.18em] transition-colors last:border-b-0 ${
                           isActive ? 'text-champagne' : 'text-ivory/70 hover:text-champagne'
@@ -147,24 +156,30 @@ export function SiteHeader() {
               <div key={label} className="border-b border-white/10">
                 <button
                   type="button"
-                  aria-expanded={mobileAboutOpen}
-                  aria-controls="mobile-about-menu"
-                  onClick={() => setMobileAboutOpen((open) => !open)}
-                  className={`flex w-full items-center justify-between py-4 font-sans text-xs uppercase tracking-[0.18em] ${isAboutActive ? 'text-champagne' : 'text-ivory/75'}`}
+                  aria-expanded={mobileOpenMenu === label}
+                  aria-controls={`mobile-menu-${label}`}
+                  onClick={() =>
+                    setMobileOpenMenu((open) => (open === label ? null : label))
+                  }
+                  className={`flex w-full items-center justify-between py-4 font-sans text-xs uppercase tracking-[0.18em] ${isGroupActive(children) ? 'text-champagne' : 'text-ivory/75'}`}
                 >
                   {label}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform ${mobileAboutOpen ? 'rotate-180' : ''}`}
+                    className={`transition-transform ${mobileOpenMenu === label ? 'rotate-180' : ''}`}
                   />
                 </button>
-                {mobileAboutOpen && (
-                  <div id="mobile-about-menu" className="pb-2 pl-4">
+                {mobileOpenMenu === label && (
+                  <div id={`mobile-menu-${label}`} className="pb-2 pl-4">
                     {children.map((child) => (
                       <NavLink
                         key={child.to}
                         to={child.to}
-                        onClick={() => setMenuOpen(false)}
+                        end={child.to === '/shop'}
+                        onClick={() => {
+                          setMenuOpen(false)
+                          setMobileOpenMenu(null)
+                        }}
                         className={({ isActive }) =>
                           `block border-l border-white/10 py-3 pl-4 font-sans text-[11px] uppercase tracking-[0.16em] ${isActive ? 'text-champagne' : 'text-ivory/60'}`
                         }

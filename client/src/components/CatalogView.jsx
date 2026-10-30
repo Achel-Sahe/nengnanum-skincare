@@ -1,39 +1,40 @@
 import { useState } from 'react'
-import { ArrowRight, BadgeCheck, Leaf, Users } from 'lucide-react'
+import {
+  ArrowRight,
+  BadgeCheck,
+  Clock3,
+  Gift,
+  Leaf,
+  Sparkles,
+  Users,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { ProductCard, PrimaryButton } from './ProductCard.jsx'
 import { Eyebrow, SectionHeading, TextLink } from './layout/SiteChrome.jsx'
-import { products } from '../data/content.js'
+import { catalogContent } from '../data/catalogContent.js'
 import { useCartStore } from '../features/cart/store.js'
 
-const benefits = [
-  {
-    icon: BadgeCheck,
-    title: 'Terdaftar BPOM',
-    text: 'Teruji ketat dan memenuhi standar keamanan, tanpa ragu dipakai setiap hari.',
-  },
-  {
-    icon: Leaf,
-    title: 'Halal & bahan pilihan',
-    text: 'Bersertifikat halal, diracik dari bahan berkualitas tinggi yang bekerja untuk kulitmu.',
-  },
-  {
-    icon: Users,
-    title: 'Untuk pria & wanita',
-    text: 'Formulasi seimbang dan lembut untuk semua jenis kulit, aman dipakai jangka panjang.',
-  },
-]
+const benefitIcons = {
+  badge: BadgeCheck,
+  leaf: Leaf,
+  users: Users,
+  sparkle: Sparkles,
+  clock: Clock3,
+  gift: Gift,
+}
 
-const productFilters = ['Semua', 'Serum', 'Pelembap', 'Mist', 'Set']
-
-export function CatalogView({ showcase = false }) {
+export function CatalogView({ showcase = false, variant = 'skincare' }) {
+  const content = catalogContent[variant]
   const [activeFilter, setActiveFilter] = useState('Semua')
   const addItem = useCartStore((state) => state.addItem)
 
-  const visibleProducts = products.filter(
-    (product) => activeFilter === 'Semua' || product.category === activeFilter,
-  )
+  const visibleProducts = content.products.filter((product) => {
+    if (activeFilter === 'Semua') return true
+    return (
+      product.category === activeFilter || product.collection === activeFilter.toLowerCase()
+    )
+  })
 
   function handleAdd(product) {
     addItem(
@@ -59,59 +60,45 @@ export function CatalogView({ showcase = false }) {
           } max-w-atelier items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-12 lg:py-20`}
         >
           <div className="max-w-xl">
-            <Eyebrow>Nengnanum Beauty · Skincare untuk semua</Eyebrow>
+            <Eyebrow>{content.heroEyebrow}</Eyebrow>
             <h1 className="mt-6 font-display text-[3.2rem] leading-[.94] tracking-[-0.035em] sm:text-7xl lg:text-[5.4rem]">
-              Cantik Berseri,
+              {content.titleLead}
               <br />
-              <em className="font-normal text-goldlight">Aman Seutuhnya.</em>
+              <em className="font-normal text-goldlight">{content.titleItalic}</em>
             </h1>
             <p className="mt-7 max-w-lg font-sans text-sm leading-6 text-ivory/65 sm:text-base sm:leading-7">
-              Kulit sehat bukan milik satu orang saja. Pria dan wanita, semua berhak punya kulit
-              yang lembut, cerah, dan terawat. Bukan hasil instan—tapi perawatan yang tumbuh
-              bersama kamu, hari demi hari.
+              {content.description}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-6">
-              <PrimaryButton href="#collection">Lihat koleksi</PrimaryButton>
-              <TextLink to="/about-us" light>
-                Kenali Nengnanum
+              <PrimaryButton href="#collection">{content.primaryLabel}</PrimaryButton>
+              <TextLink to={content.secondaryTo} light>
+                {content.secondaryLabel}
               </TextLink>
             </div>
             <div className="mt-12 grid max-w-md grid-cols-3 gap-5 border-t border-white/15 pt-5">
-              <div>
-                <span className="font-display text-2xl text-goldlight">BPOM</span>
-                <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/45">
-                  Terdaftar &amp; teruji
-                </p>
-              </div>
-              <div>
-                <span className="font-display text-2xl text-goldlight">Halal</span>
-                <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/45">
-                  Bersertifikat
-                </p>
-              </div>
-              <div>
-                <span className="font-display text-2xl text-goldlight">Semua</span>
-                <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/45">
-                  Pria &amp; wanita
-                </p>
-              </div>
+              {content.stats.map((stat) => (
+                <div key={stat.label}>
+                  <span className="font-display text-2xl text-goldlight">{stat.value}</span>
+                  <p className="mt-1 font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/45">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[470px]">
             <div className="absolute -inset-4 rounded-t-[13rem] border border-champagne/30" />
             <div className="relative overflow-hidden rounded-t-[12rem] bg-indigo">
               <img
-                src="/images/heritage-hero.jpg"
-                alt="Rangkaian perawatan Nengnanum Beauty dalam cahaya hangat"
+                src={content.heroImage}
+                alt={content.heroAlt}
                 className="aspect-[.9/1] w-full object-cover object-center"
               />
             </div>
             <div className="absolute -bottom-5 left-5 max-w-[250px] border border-white/15 bg-midnight/95 px-5 py-4 shadow-gold sm:left-[-2rem]">
-              <p className="eyebrow text-champagne">Nengnanum Beauty</p>
-              <p className="mt-2 font-display text-xl text-ivory">Kulit sehat &amp; berseri</p>
-              <p className="mt-1 font-sans text-xs text-ivory/55">
-                Lembut · cerah · terawat
-              </p>
+              <p className="eyebrow text-champagne">{content.cardEyebrow}</p>
+              <p className="mt-2 font-display text-xl text-ivory">{content.cardTitle}</p>
+              <p className="mt-1 font-sans text-xs text-ivory/55">{content.cardText}</p>
             </div>
           </div>
         </div>
@@ -121,16 +108,16 @@ export function CatalogView({ showcase = false }) {
         <div className="mx-auto max-w-atelier px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col justify-between gap-6 border-b border-hairline pb-6 md:flex-row md:items-end">
             <SectionHeading
-              eyebrow="Rangkaian Nengnanum"
-              title="Manfaat nyata untuk kulitmu"
-              description="Enam langkah perawatan untuk melembapkan, mencerahkan, dan menjaga kulit tetap sehat setiap hari."
+              eyebrow={content.collectionEyebrow}
+              title={content.collectionTitle}
+              description={content.collectionDescription}
             />
             <div
               className="flex flex-wrap gap-x-5 gap-y-2 pb-1"
               role="group"
-              aria-label="Filter produk berdasarkan kategori"
+              aria-label={`Filter ${content.filterLabel} berdasarkan kategori`}
             >
-              {productFilters.map((filter) => (
+              {content.filters.map((filter) => (
                 <button
                   key={filter}
                   type="button"
@@ -168,33 +155,27 @@ export function CatalogView({ showcase = false }) {
           </div>
           <div className="md:pl-8 lg:pl-16">
             <SectionHeading
-              eyebrow="Kenapa Nengnanum"
+              eyebrow={content.storyEyebrow}
               title={
                 <>
-                  Kulit sehat itu
+                  {content.storyTitleLead}
                   <br />
-                  <em className="font-normal text-goldlight">kebutuhan semua orang.</em>
+                  <em className="font-normal text-goldlight">{content.storyTitleItalic}</em>
                 </>
               }
-              description="Nengnanum hadir untuk kamu, pasanganmu, dan keluarga. Aman, efektif, dan cocok untuk siapa saja yang ingin tampil maksimal setiap hari."
+              description={content.storyDescription}
               light
             />
             <div className="mt-8 grid gap-6 border-t border-white/15 pt-6 sm:grid-cols-2">
-              <div>
-                <p className="font-display text-xl">Melembapkan tahan lama</p>
-                <p className="mt-2 font-sans text-xs leading-5 text-ivory/55">
-                  Membantu menjaga kelembapan alami dan membuat kulit terasa lebih lembut.
-                </p>
-              </div>
-              <div>
-                <p className="font-display text-xl">Mencerahkan &amp; meratakan</p>
-                <p className="mt-2 font-sans text-xs leading-5 text-ivory/55">
-                  Membantu memudarkan noda, bekas jerawat, dan warna kulit yang tidak merata.
-                </p>
-              </div>
+              {content.storyPoints.map((point) => (
+                <div key={point.title}>
+                  <p className="font-display text-xl">{point.title}</p>
+                  <p className="mt-2 font-sans text-xs leading-5 text-ivory/55">{point.text}</p>
+                </div>
+              ))}
             </div>
-            <TextLink to="/about-us" light className="mt-8">
-              Baca cerita kami
+            <TextLink to={content.storyLinkTo} light className="mt-8">
+              {content.storyLinkLabel}
             </TextLink>
           </div>
         </div>
@@ -202,33 +183,36 @@ export function CatalogView({ showcase = false }) {
 
       <section className="bg-paper py-16 sm:py-20">
         <div className="mx-auto grid max-w-atelier gap-8 px-6 sm:px-8 md:grid-cols-3 lg:px-12">
-          {benefits.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="flex gap-4 border-t border-hairline pt-5">
-              <Icon size={19} strokeWidth={1.3} className="mt-1 shrink-0 text-champagne" />
-              <div>
-                <h3 className="font-display text-xl text-ink">{title}</h3>
-                <p className="mt-2 font-sans text-sm leading-5 text-slate">{text}</p>
+          {content.benefits.map(({ icon, title, text }) => {
+            const Icon = benefitIcons[icon]
+
+            return (
+              <div key={title} className="flex gap-4 border-t border-hairline pt-5">
+                <Icon size={19} strokeWidth={1.3} className="mt-1 shrink-0 text-champagne" />
+                <div>
+                  <h3 className="font-display text-xl text-ink">{title}</h3>
+                  <p className="mt-2 font-sans text-sm leading-5 text-slate">{text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
       <section className="bg-ivory px-6 py-20 sm:px-8 sm:py-24 lg:px-12">
         <div className="mx-auto max-w-atelier border-y border-hairline py-12 text-center sm:py-16">
-          <Eyebrow>Cintai kulitmu</Eyebrow>
+          <Eyebrow>{content.invitationEyebrow}</Eyebrow>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl leading-tight text-ink sm:text-5xl">
-            Karena kulitmu pantas dirawat, bukan sekadar diobati.
+            {content.invitationTitle}
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-6 text-slate">
-            Temukan rangkaian yang tepat untuk kebutuhan kulitmu, atau tanya tim kami untuk
-            panduan pemakaian.
+            {content.invitationDescription}
           </p>
           <Link
-            to="/qna?category=Konsultasi#faq-search"
+            to={content.invitationTo}
             className="mt-7 inline-flex items-center gap-2 border-b border-champagne pb-2 font-sans text-[10px] uppercase tracking-[0.18em] text-ink transition-colors hover:text-champagne"
           >
-            Tanya tim Nengnanum <ArrowRight size={14} />
+            {content.invitationLabel} <ArrowRight size={14} />
           </Link>
         </div>
       </section>

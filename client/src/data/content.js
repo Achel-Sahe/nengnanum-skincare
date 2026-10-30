@@ -1,6 +1,7 @@
-export const products = [
+export const skincareProducts = [
   {
     slug: 'nengnanum-glow-serum',
+    collection: 'skincare',
     name: 'Nengnanum Glow Serum',
     category: 'Serum',
     description: 'Serum ringan untuk membantu mencerahkan kulit kusam dan meratakan warna kulit.',
@@ -10,17 +11,8 @@ export const products = [
     note: 'Pencerah harian',
   },
   {
-    slug: 'nengnanum-night-elixir',
-    name: 'Nengnanum Night Elixir',
-    category: 'Serum',
-    description: 'Perawatan malam bertekstur lembut untuk kulit yang terasa lebih kenyal saat bangun.',
-    price: 219000,
-    image: '/images/night-elixir.jpg',
-    alt: 'Botol elixir malam Nengnanum Beauty di atas meja rias',
-    note: 'Ritual malam',
-  },
-  {
     slug: 'nengnanum-radiance-cream',
+    collection: 'skincare',
     name: 'Nengnanum Radiance Cream',
     category: 'Pelembap',
     description: 'Krim pelembap harian yang menjaga kelembapan alami dan membuat kulit terasa lebih halus.',
@@ -31,6 +23,7 @@ export const products = [
   },
   {
     slug: 'nengnanum-rose-mist',
+    collection: 'skincare',
     name: 'Nengnanum Rose Mist',
     category: 'Mist',
     description: 'Mist ringan untuk menyegarkan dan melembapkan kulit kapan saja.',
@@ -39,27 +32,56 @@ export const products = [
     alt: 'Mist mawar Nengnanum Beauty dengan botol rose-gold',
     note: 'Segar setiap saat',
   },
+]
+
+export const parfumProducts = [
   {
-    slug: 'nengnanum-renewal-essence',
-    name: 'Nengnanum Renewal Essence',
-    category: 'Serum',
-    description: 'Esens botani untuk membantu menjaga elastisitas dan menutrisi kulit dari dalam.',
-    price: 179000,
+    slug: 'nengnanum-oud-absolu',
+    collection: 'parfum',
+    name: 'Nengnanum Oud Absolu',
+    category: 'Eau de parfum',
+    description: 'Oud, mawar, dan amber hangat dalam komposisi yang dalam dan berkesan.',
+    price: 489000,
     image: '/images/oud-absolu.jpg',
-    alt: 'Esens botani Nengnanum Beauty dengan botol biru tua',
-    note: 'Nutrisi harian',
+    alt: 'Botol parfum Oud Absolu Nengnanum Beauty berwarna biru tua',
+    note: 'Signature',
+  },
+  {
+    slug: 'nengnanum-nectar-de-nuit',
+    collection: 'parfum',
+    name: 'Nengnanum Nectar de Nuit',
+    category: 'Extrait',
+    description: 'Amber, rempah, dan kehangatan botanik untuk malam yang tak mudah dilupakan.',
+    price: 429000,
+    image: '/images/night-elixir.jpg',
+    alt: 'Botol parfum Nectar de Nuit Nengnanum Beauty dengan warna amber',
+    note: 'Limited edition',
+  },
+  {
+    slug: 'nengnanum-rose-de-minuit',
+    collection: 'parfum',
+    name: 'Nengnanum Rose de Minuit',
+    category: 'Eau de parfum',
+    description: 'Mawar lembut, musk, dan sentuhan kayu yang bersih dan menenangkan.',
+    price: 379000,
+    image: '/images/hero-fragrance.jpg',
+    alt: 'Botol parfum Rose de Minuit Nengnanum Beauty',
+    note: 'Floral',
   },
   {
     slug: 'nengnanum-discovery-set',
+    collection: 'parfum',
     name: 'Nengnanum Discovery Set',
     category: 'Set',
-    description: 'Rangkaian kecil untuk mencoba rutinitas Nengnanum Beauty sebelum memilih ukuran penuh.',
-    price: 349000,
+    description: 'Tiga miniatur parfum untuk mencoba setiap karakter sebelum memilih ukuran penuh.',
+    price: 299000,
     image: '/images/discovery-set.jpg',
-    alt: 'Set perkenalan Nengnanum Beauty dalam kotak hadiah',
+    alt: 'Set miniatur parfum Nengnanum Beauty dalam kotak hadiah',
     note: 'Set perkenalan',
   },
 ]
+
+export const products = [...skincareProducts, ...parfumProducts]
 
 export const faqs = [
   {
